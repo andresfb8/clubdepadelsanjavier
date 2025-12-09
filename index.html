@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Pádel San Javier</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1D4CAF',
+                            lime: '#E0ED1D',
+                            dark: '#0F172A',
+                            light: '#F8FAFC',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['League Spartan', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Asegurar scroll vertical */
+        html, body {
+            overflow-y: auto !important;
+            height: auto !important;
+            min-height: 100vh;
+        }
+
+        /* Ocultar barra de scroll del carrusel pero permitir deslizar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .carousel-container {
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light antialiased selection:bg-brand-lime selection:text-brand-blue">
+
+    <!-- MENÚ / HEADER -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- LOGO: Asegúrate de que sea 'logo.png' en minúsculas -->
+                <img src="img/logo.png" alt="Logo Club Pádel San Javier" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                
+                <!-- Fallback texto si no carga el logo -->
+                <div class="hidden sm:block">
+                    <span class="block font-display font-bold text-brand-blue leading-none text-lg">CLUB DE PÁDEL</span>
+                    <span class="block font-display font-bold text-gray-400 leading-none text-sm tracking-widest">SAN JAVIER</span>
+                </div>
+            </a>
+
+            <!-- Menú Escritorio -->
+            <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm tracking-wide">
+                <a href="#escuelas" class="hover:text-brand-blue transition-colors">ESCUELAS</a>
+                <a href="#equipo" class="hover:text-brand-blue transition-colors">EL EQUIPO</a>
+                <a href="#competicion" class="hover:text-brand-blue transition-colors">COMPETICIÓN</a>
+                <a href="#filosofia" class="hover:text-brand-blue transition-colors">EL CLUB</a>
+            </nav>
+
+            <!-- Botón CTA -->
+            <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20probar%20una%20clase%20gratis" target="_blank" class="hidden lg:inline-flex items-center justify-center px-6 py-2.5 bg-brand-blue text-white font-display font-bold uppercase tracking-wider text-sm rounded hover:bg-brand-lime hover:text-brand-blue transition-all transform hover:-translate-y-0.5 shadow-lg shadow-brand-blue/30">
+                Prueba de Nivel Gratis
+            </a>
+
+            <!-- Menú Móvil (Hamburguesa) -->
+            <button id="menu-btn" class="lg:hidden text-brand-blue focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-blue flex flex-col justify-center items-center gap-8 text-white font-display text-2xl font-bold translate-x-full transition-transform duration-300 overflow-y-auto">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-lime">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#escuelas" class="hover:text-brand-lime transition-colors mobile-link">ESCUELAS</a>
+        <a href="#equipo" class="hover:text-brand-lime transition-colors mobile-link">EL EQUIPO</a>
+        <a href="#competicion" class="hover:text-brand-lime transition-colors mobile-link">COMPETICIÓN</a>
+        <a href="#filosofia" class="hover:text-brand-lime transition-colors mobile-link">EL CLUB</a>
+        <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20probar%20una%20clase%20gratis" class="mt-4 px-8 py-3 bg-brand-lime text-brand-blue rounded font-bold uppercase mobile-link">Reservar Prueba</a>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- PORTADA (HERO SECTION) -->
+        <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+            <!-- Imagen de Fondo (PÁDEL REAL) -->
+            <div class="absolute inset-0 bg-gray-900">
+                <!-- Foto: Pala de Pádel y pista azul (Archivo local) -->
+                <div class="absolute inset-0 bg-center bg-cover opacity-50" style="background-image: url('img/portada.jpg');"></div>
+                <!-- Fallback por si la imagen local no está (Fondo azul oscuro) -->
+                <div class="absolute inset-0 bg-brand-blue/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/90 via-transparent to-black/40"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 text-center text-white max-w-4xl py-12">
+                <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-none mb-6 drop-shadow-lg">
+                    MÁS QUE PADEL,<br/>
+                    <span class="text-brand-lime">TU NUEVA FAMILIA.</span>
+                </h1>
+                <p class="font-light text-lg md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
+                    La escuela de referencia en San Javier y alrededores para aprender, competir y divertirse. Mejora tu nivel con nuestros coachs y vive la experiencia desde dentro.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#escuelas" class="px-8 py-4 bg-brand-lime text-brand-blue font-display font-bold text-lg rounded shadow-[0_0_20px_rgba(224,237,29,0.4)] hover:shadow-[0_0_30px_rgba(224,237,29,0.6)] hover:bg-white transition-all uppercase tracking-wide">
+                        ¡Quiero Aprender!
+                    </a>
+                    <a href="#competicion" class="px-8 py-4 border-2 border-white text-white font-display font-bold text-lg rounded hover:bg-white hover:text-brand-blue transition-all uppercase tracking-wide">
+                        Ver Eventos
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Indicador Scroll -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70 flex flex-col items-center">
+                <span class="text-xs mb-2 uppercase tracking-widest">Desliza</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
+
+        <!-- PROPUESTA DE VALOR -->
+        <section id="valores" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div class="group p-6 hover:bg-gray-50 rounded-2xl transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto bg-brand-blue/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
+                            <span class="text-4xl text-brand-blue group-hover:text-brand-lime transition-colors">🎓</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-brand-blue mb-4">100% Escuela</h3>
+                        <p class="text-gray-600 leading-relaxed">No alquilamos pistas, creamos jugadores. Tu evolución es nuestra única prioridad.</p>
+                    </div>
+                    <div class="group p-6 hover:bg-gray-50 rounded-2xl transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto bg-brand-blue/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
+                            <span class="text-4xl text-brand-blue group-hover:text-brand-lime transition-colors">🏆</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-brand-blue mb-4">Competición Real</h3>
+                        <p class="text-gray-600 leading-relaxed">Torneos nivelados y Ligas internas. Siempre tendrás un rival a tu altura.</p>
+                    </div>
+                    <div class="group p-6 hover:bg-gray-50 rounded-2xl transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto bg-brand-blue/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
+                            <span class="text-4xl text-brand-blue group-hover:text-brand-lime transition-colors">🍻</span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-brand-blue mb-4">La Familia SJ</h3>
+                        <p class="text-gray-600 leading-relaxed">El tercer tiempo es sagrado. Un ambiente donde disfrutar antes y después del partido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUESTRA FILOSOFÍA -->
+        <section id="filosofia" class="py-24 bg-brand-blue text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-lime rounded-full blur-[100px] opacity-20"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-[120px] opacity-20"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <span class="text-brand-lime font-bold tracking-widest uppercase mb-2 block">Nuestra Filosofía</span>
+                        <h2 class="font-display font-bold text-4xl md:text-6xl mb-8 leading-tight">AQUÍ NO VIENES SOLO A JUGAR.</h2>
+                        <div class="space-y-8">
+                            <div class="flex gap-4">
+                                <div class="w-1 h-full min-h-[60px] bg-brand-lime rounded-full"></div>
+                                <div>
+                                    <h4 class="font-display font-bold text-xl mb-1 text-brand-lime">CERO FORMALISMOS</h4>
+                                    <p class="text-blue-100">Aquí se viene a disfrutar, hablar claro y pasarlo bien. Somos tu club, no tu oficina.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-1 h-full min-h-[60px] bg-brand-lime rounded-full"></div>
+                                <div>
+                                    <h4 class="font-display font-bold text-xl mb-1 text-brand-lime">PADEL PARA TODOS</h4>
+                                    <p class="text-blue-100">Desde los que empiezan hoy hasta los que compiten. Si tienes ganas, tienes sitio.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-1 h-full min-h-[60px] bg-brand-lime rounded-full"></div>
+                                <div>
+                                    <h4 class="font-display font-bold text-xl mb-1 text-brand-lime">FAMILIA EN PISTA</h4>
+                                    <p class="text-blue-100">Más que socios, somos compañeros. Queremos que sientas el club como tu segunda casa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 relative">
+                        <div class="bg-white p-2 rounded-2xl transform rotate-3 shadow-2xl">
+                             <!-- FOTO COMUNIDAD: Podrías usar 'img/comunidad.jpg' -->
+                             <img src="https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop" alt="Comunidad SJ" class="rounded-xl w-full object-cover h-[400px]">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-brand-lime text-brand-blue p-6 rounded-xl shadow-lg max-w-[200px] transform -rotate-2">
+                            <p class="font-display font-bold text-3xl leading-none">+150</p>
+                            <p class="font-bold text-sm">Alumnos activos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCUELAS (3 OPCIONES) -->
+        <section id="escuelas" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4 mb-12 text-center">
+                <span class="text-brand-blue font-bold tracking-widest uppercase mb-2 block">Nuestro Producto Principal</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-brand-blue">ESCUELAS SJ</h2>
+            </div>
+            
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta Adultos -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-64 overflow-hidden relative">
+                             <!-- FOTO ADULTOS: Archivo local 'img/adultos.jpg' -->
+                             <img src="img/adultos.jpg" alt="Escuela Adultos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/80 to-transparent flex items-end p-8">
+                                <h3 class="text-3xl font-display font-bold text-white">ADULTOS</h3>
+                             </div>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold text-brand-blue mb-2">Mejora tu nivel</h4>
+                            <p class="text-sm font-bold text-brand-lime uppercase mb-4">Desde 30€ a 45€ / mes</p>
+                            <p class="text-gray-600 mb-6 text-sm">Clases dinámicas de 2 días por semana (Mañanas o Tardes). Mejora tu técnica y entiende el juego.</p>
+                            <ul class="mb-8 space-y-2 text-sm text-gray-500">
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> Grupos reducidos (Máx 4)</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> Grupos nivelados</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> Sesiones técnico tácticas</li>
+                            </ul>
+                            <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20Escuelas" class="block text-center w-full py-3 border-2 border-brand-blue text-brand-blue font-display font-bold rounded hover:bg-brand-blue hover:text-white transition-colors uppercase">Quiero más información</a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Menores -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-64 overflow-hidden relative">
+                             <!-- FOTO MENORES: Archivo local 'img/menores.jpg' -->
+                             <img src="img/menores.jpg" alt="Escuela Menores" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-gradient-to-t from-brand-lime/90 to-transparent flex items-end p-8">
+                                <h3 class="text-3xl font-display font-bold text-brand-blue">MENORES</h3>
+                             </div>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold text-brand-blue mb-2">Diversión y Valores</h4>
+                            <p class="text-sm font-bold text-brand-blue uppercase mb-4">Desde 20€/mes o 320€/temp</p>
+                            <p class="text-gray-600 mb-6 text-sm">La mejor extraescolar. Dos entrenamientos semanales. Opción Base o Competición (incluye licencia y liga).</p>
+                            <ul class="mb-8 space-y-2 text-sm text-gray-500">
+                                <li class="flex items-center gap-2"><span class="text-brand-blue">✔</span> Psicomotricidad</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-blue">✔</span> Tecnificación y Pre-Competición</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-blue">✔</span> Preparación física</li>
+                            </ul>
+                            <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20Escuelas" class="block text-center w-full py-3 bg-brand-blue text-white font-display font-bold rounded hover:bg-brand-lime hover:text-brand-blue transition-colors uppercase">Quiero más información</a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Particulares (NUEVA) -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-brand-lime relative">
+                        <div class="absolute top-0 right-0 bg-brand-lime text-brand-blue font-bold px-4 py-1 rounded-bl-xl z-10 text-xs uppercase">Premium</div>
+                        <div class="h-64 overflow-hidden relative">
+                             <!-- FOTO PARTICULARES: Archivo local 'img/particulares.jpg' -->
+                             <img src="img/particulares.jpg" alt="Clases Particulares" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-8">
+                                <h3 class="text-3xl font-display font-bold text-white">PARTICULARES</h3>
+                             </div>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold text-brand-blue mb-2">Tu Acelerador</h4>
+                            <p class="text-sm font-bold text-brand-lime uppercase mb-4">25€ / Hora (1 Persona)</p>
+                            <p class="text-gray-600 mb-6 text-sm">Si quieres corregir manías, aprender la técnica perfecta o simplemente prefieres atención 100% exclusiva.</p>
+                            <ul class="mb-8 space-y-2 text-sm text-gray-500">
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> +5€ por persona extra</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> Horario flexible</li>
+                                <li class="flex items-center gap-2"><span class="text-brand-lime">✔</span> Corrección intensiva</li>
+                            </ul>
+                            <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20Clases%20Particulares" class="block text-center w-full py-3 bg-gray-900 text-white font-display font-bold rounded hover:bg-brand-blue transition-colors uppercase">Reservar Hora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE COACHS (CARRUSEL MEJORADO) -->
+        <section id="equipo" class="py-24 bg-brand-light relative overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-brand-blue font-bold tracking-widest uppercase mb-2 block">El Staff Técnico</span>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl text-brand-blue">CONOCE A TUS COACHS</h2>
+                </div>
+
+                <!-- Contenedor Carrusel -->
+                <div class="carousel-container relative">
+                    <!-- Flechas de navegación (solo escritorio) -->
+                    <button onclick="scrollTeam('left')" class="hidden md:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 w-12 h-12 bg-white text-brand-blue rounded-full shadow-lg items-center justify-center hover:bg-brand-lime transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="scrollTeam('right')" class="hidden md:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 w-12 h-12 bg-white text-brand-blue rounded-full shadow-lg items-center justify-center hover:bg-brand-lime transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Lista de Coachs (Deslizable) -->
+                    <div id="team-scroller" class="flex gap-6 overflow-x-auto pb-8 px-4 hide-scrollbar snap-x scroll-smooth">
+                        <!-- Las tarjetas se generan abajo con JS -->
+                    </div>
+                </div>
+                
+                <!-- Indicador móvil -->
+                <div class="flex justify-center gap-2 mt-4 lg:hidden">
+                    <span class="text-gray-400 text-sm animate-pulse">← Desliza para ver a todos →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPETICIÓN Y EVENTOS -->
+        <section id="competicion" class="py-24 bg-brand-blue text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <h2 class="font-display font-bold text-4xl md:text-6xl mb-6 leading-tight">¿TIENES HAMBRE DE <span class="text-brand-lime">COMPETICIÓN?</span></h2>
+                        <p class="text-xl text-blue-100 mb-8 font-light">Organizamos Ligas Internas y eventos cada semana para todos los niveles. No necesitas pareja, ¡nosotros te buscamos partido!</p>
+                        <!-- BOTÓN AL FORMULARIO GOOGLE -->
+                        <a href="https://forms.gle/Sejwx6nTcabkbfgi7" target="_blank" class="inline-block px-8 py-4 bg-brand-lime text-brand-blue font-display font-bold text-lg rounded hover:bg-white transition-all uppercase tracking-wide">Inscribirse al Ranking</a>
+                    </div>
+                    
+                    <div class="lg:w-1/2 w-full">
+                        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+                            <h3 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+                                <span>📅</span> Próximos Eventos
+                            </h3>
+                            <div class="space-y-4">
+                                <!-- Evento 1 -->
+                                <div class="bg-brand-blue/50 p-6 rounded-xl flex items-center justify-between border-l-4 border-brand-lime hover:bg-brand-blue/80 transition-colors">
+                                    <div>
+                                        <p class="font-bold text-xl text-white">Liga de menores</p>
+                                        <p class="text-brand-lime text-sm font-bold mt-1">Competición formativa</p>
+                                    </div>
+                                    <span class="text-2xl">🎾</span>
+                                </div>
+                                <!-- Evento 2 -->
+                                <div class="bg-brand-blue/50 p-6 rounded-xl flex items-center justify-between border-l-4 border-white hover:bg-brand-blue/80 transition-colors">
+                                    <div>
+                                        <p class="font-bold text-xl text-white">Ranking de adultos</p>
+                                        <p class="text-blue-200 text-sm font-bold mt-1">Sube de categoría</p>
+                                    </div>
+                                    <span class="text-2xl">🏆</span>
+                                </div>
+                                <!-- Evento 3 -->
+                                <div class="bg-brand-blue/50 p-6 rounded-xl flex items-center justify-between border-l-4 border-brand-lime hover:bg-brand-blue/80 transition-colors">
+                                    <div>
+                                        <p class="font-bold text-xl text-white">Viernes de minitorneos</p>
+                                        <p class="text-brand-lime text-sm font-bold mt-1">Diversión asegurada</p>
+                                    </div>
+                                    <span class="text-2xl">🔥</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPINIONES REALES (GOOGLE REVIEWS) -->
+        <section id="resenas" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="text-brand-blue font-bold tracking-widest uppercase mb-2 block">Opiniones Reales</span>
+                    <h2 class="font-display font-bold text-3xl md:text-5xl text-brand-blue flex justify-center items-center gap-3">
+                        <span class="text-brand-lime">4.9</span> EN GOOGLE
+                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </h2>
+                    <p class="mt-4 text-gray-600">Lo que dicen los que ya forman parte de la familia.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Reseña 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 mb-4 text-yellow-400"><span class="text-xl">★★★★★</span></div>
+                        <p class="text-gray-700 mb-6 italic">"Gran club, muy buen ambiente entre todos y monitores de pádel geniales. Es lo que el polideportivo necesitaba , una inyección de Pádel."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">SN</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Sergio Nuñes</p>
+                                <p class="text-xs text-gray-400">Hace 2 años</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reseña 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 mb-4 text-yellow-400"><span class="text-xl">★★★★★</span></div>
+                        <p class="text-gray-700 mb-6 italic">"Club de pádel con un excelente personal dispuesto a enseñarte."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 bg-brand-lime text-brand-blue rounded-full flex items-center justify-center font-bold">AS</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Alvaro Sanchez</p>
+                                <p class="text-xs text-gray-400">Hace 8 meses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 mb-4 text-yellow-400"><span class="text-xl">★★★★★</span></div>
+                        <p class="text-gray-700 mb-6 italic">"Ambiente espectacular y monitores muy profesionales, sobre todo Andrés, que es con quien más me relaciono, puesto que es quien me da clases. También hacen mini torneos los viernes para que haya una pequeña convivencia entre todos los alumnos y crear buen ambiente. Lo recomiendo al 100%."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-bold">FJ</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Fernando Javier</p>
+                                <p class="text-xs text-gray-400">Hace 5 meses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 4 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-1 transition-transform duration-300">
+                        <div class="flex items-center gap-1 mb-4 text-yellow-400"><span class="text-xl">★★★★★</span></div>
+                        <p class="text-gray-700 mb-6 italic">"Me apunté al club de Padel de San Javier porque no había jugado nunca. Decidí apuntarme para aprender y me esta enseñando el entrenador Dani. Muy profesional, tiene clases de todos los niveles y te enseña desde cero como es mi caso. Incide en la técnica para que mejor dia a dia. Sorprendido con el buen ambiente y buen rollo."</p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">PG</div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-sm">Patrick Gordinne</p>
+                                <p class="text-xs text-gray-400">Hace 3 meses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://www.google.com/search?q=club+padel+san+javier+reseñas" target="_blank" class="inline-flex items-center gap-2 text-brand-blue font-bold hover:text-brand-lime transition-colors border-b-2 border-brand-lime pb-1">
+                        Leer todas las reseñas en Google ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL WALL -->
+        <section id="social" class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-4 mb-10 text-center">
+                <span class="text-gray-400 font-bold text-sm uppercase tracking-widest">Instagram Feed</span>
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-brand-blue">ASÍ SE VIVE EL PÁDEL EN <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="text-brand-blue underline decoration-brand-lime hover:text-brand-lime transition-colors">@clubpadelsanjavier</a></h2>
+            </div>
+            
+            <div class="flex gap-4 overflow-x-auto pb-8 px-4 hide-scrollbar snap-x">
+                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1627627453472-358045618458?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
+                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596726662705-72879599557a?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
+                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
+                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
+                    </div>
+                </a>
+                 <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
+                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
+                    </div>
+                </a>
+                 <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
+                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- LOGO FOOTER -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                         <!-- LOGO FOOTER: Archivo local 'img/logo.png' -->
+                         <img src="img/logo.png" alt="Logo SJ" class="w-12 h-auto object-contain" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block'">
+                         <h4 class="font-display font-bold text-xl">CLUB DE PÁDEL</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">El club de referencia en San Javier. Donde el deporte se encuentra con la amistad. Únete a la familia.</p>
+                </div>
+                
+                <!-- CONTACTO RÁPIDO (CON ICONO WHATSAPP OFICIAL) -->
+                <div class="text-center md:text-left">
+                    <h5 class="font-display font-bold text-lg mb-6 text-brand-lime">CONTACTO RÁPIDO</h5>
+                    <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20probar%20una%20clase%20gratis" target="_blank" class="inline-flex items-center gap-3 text-3xl font-bold hover:text-brand-lime transition-colors group">
+                        <span class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                            <!-- Icono WhatsApp SVG Oficial -->
+                            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </span>
+                        <span>WhatsApp</span>
+                    </a>
+                    <p class="text-gray-400 text-sm mt-4">Respondemos en menos de 1 hora.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-display font-bold text-lg mb-6 text-brand-lime">UBICACIÓN</h5>
+                    <p class="text-gray-300 mb-4">Polígono Industrial El Pino,<br>Av. de la Unión, San Javier, Murcia.</p>
+                    <div class="w-full h-32 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
+                        <span class="text-gray-500 text-sm">📍 Mapa de Google Integrado</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2025 Club de Pádel San Javier. Todos los derechos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Aviso Legal</a>
+                    <a href="#" class="hover:text-white">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20probar%20una%20clase%20gratis" target="_blank" class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform md:hidden">
+        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        // --- DATOS: ENTRENADORES ---
+        const coaches = [
+            { 
+                id: 1, 
+                name: "DANI", 
+                role: "Coordinador del club", 
+                image: "img/dani.jpg", 
+                specialty: "La Víbora Letal 🐍",
+            },
+            { 
+                id: 2, 
+                name: "ALBERTO", 
+                role: "Escuela menores y adultos", 
+                image: "img/alberto.jpg", 
+                specialty: "El Globo Infinito 🎈", 
+            },
+            { 
+                id: 3, 
+                name: "CARLOS", 
+                role: "Escuela menores y adultos", 
+                image: "img/carlos.jpg", 
+                specialty: "Volea de Bloqueo 🛡️", 
+            },
+            { 
+                id: 4, 
+                name: "JORGE", 
+                role: "Escuela menores", 
+                image: "img/jorge.jpg", 
+                specialty: "Bajada de Pared 📉", 
+            },
+            { 
+                id: 5, 
+                name: "PEDRO", 
+                role: "Escuela adultos", 
+                image: "img/pedro.jpg", 
+                specialty: "El Remate x3 🚀", 
+            },
+            { 
+                id: 6, 
+                name: "ANTONIO", 
+                role: "Escuela adultos", 
+                image: "img/antonio.jpg", 
+                specialty: "Saque con Efecto 🌀", 
+            }
+        ];
+
+        // --- RENDERIZADO TARJETAS ---
+        const scroller = document.getElementById('team-scroller');
+
+        function renderCards() {
+            scroller.innerHTML = coaches.map(coach => `
+                <div class="min-w-[280px] md:min-w-[320px] bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brand-blue/30 group snap-center flex flex-col items-center text-center">
+                    <!-- FOTO COACH: Recuerda usar verticales 600x800 -->
+                    <img src="${coach.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2670&auto=format&fit=crop'" class="w-56 h-72 rounded-2xl object-cover border-4 border-brand-blue group-hover:border-brand-lime transition-colors mb-6 shadow-md">
+                    <div>
+                        <h4 class="font-display font-bold text-2xl text-brand-blue leading-none mb-2">${coach.name}</h4>
+                        <p class="text-sm text-gray-500 uppercase tracking-wide font-semibold mb-4 min-h-[40px] flex items-center justify-center">${coach.role}</p>
+                    </div>
+                    <div class="w-full pt-4 border-t border-gray-100 flex flex-col items-center">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Golpe Maestro</span>
+                        <span class="text-base bg-brand-lime/30 text-brand-dark px-4 py-1 rounded-full font-bold">${coach.specialty}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- FUNCIONES DE NAVEGACIÓN ---
+        window.scrollTeam = (direction) => {
+            const scrollAmount = 340; // Ancho tarjeta + gap
+            if(direction === 'left') {
+                scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // --- LÓGICA MENÚ MÓVIL ---
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            // Toggle clase para mover el menú
+            mobileMenu.classList.toggle('translate-x-full');
+            
+            // Bloquear scroll del body
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // --- EFECTO SCROLL NAVBAR ---
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+
+        // --- INICIALIZACIÓN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+        });
+
+    </script>
+</body>
+</html>
