@@ -64,10 +64,9 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <!-- LOGO: Asegúrate de que sea 'logo.png' en minúsculas -->
-                <img src="img/logo.png" alt="Logo Club Pádel San Javier" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <!-- LOGO CON FRENO DE ERROR -->
+                <img src="img/logo.png" alt="Logo Club Pádel San Javier" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block'">
                 
-                <!-- Fallback texto si no carga el logo -->
                 <div class="hidden sm:block">
                     <span class="block font-display font-bold text-brand-blue leading-none text-lg">CLUB DE PÁDEL</span>
                     <span class="block font-display font-bold text-gray-400 leading-none text-sm tracking-widest">SAN JAVIER</span>
@@ -111,11 +110,11 @@
 
         <!-- PORTADA (HERO SECTION) -->
         <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-            <!-- Imagen de Fondo (PÁDEL REAL) -->
+            <!-- Imagen de Fondo -->
             <div class="absolute inset-0 bg-gray-900">
-                <!-- Foto: Pala de Pádel y pista azul (Archivo local) -->
+                <!-- Se usa un estilo inline para poder referenciar la imagen local fácilmente -->
                 <div class="absolute inset-0 bg-center bg-cover opacity-50" style="background-image: url('img/portada.jpg');"></div>
-                <!-- Fallback por si la imagen local no está (Fondo azul oscuro) -->
+                <!-- Fallback por si no existe la imagen local (Fondo azul oscuro) -->
                 <div class="absolute inset-0 bg-brand-blue/20"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/90 via-transparent to-black/40"></div>
             </div>
@@ -210,7 +209,7 @@
                     </div>
                     <div class="md:w-1/2 relative">
                         <div class="bg-white p-2 rounded-2xl transform rotate-3 shadow-2xl">
-                             <!-- FOTO COMUNIDAD: Podrías usar 'img/comunidad.jpg' -->
+                             <!-- FOTO COMUNIDAD: Genérica -->
                              <img src="https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop" alt="Comunidad SJ" class="rounded-xl w-full object-cover h-[400px]">
                         </div>
                         <div class="absolute -bottom-6 -right-6 bg-brand-lime text-brand-blue p-6 rounded-xl shadow-lg max-w-[200px] transform -rotate-2">
@@ -234,8 +233,8 @@
                     <!-- Tarjeta Adultos -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                         <div class="h-64 overflow-hidden relative">
-                             <!-- FOTO ADULTOS: Archivo local 'img/adultos.jpg' -->
-                             <img src="img/adultos.jpg" alt="Escuela Adultos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <!-- FOTO ADULTOS: Archivo local con freno de error -->
+                             <img src="img/adultos.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599586120429-4828d5dabb70?q=80&w=2670&auto=format&fit=crop'" alt="Escuela Adultos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                              <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/80 to-transparent flex items-end p-8">
                                 <h3 class="text-3xl font-display font-bold text-white">ADULTOS</h3>
                              </div>
@@ -256,8 +255,8 @@
                     <!-- Tarjeta Menores -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                         <div class="h-64 overflow-hidden relative">
-                             <!-- FOTO MENORES: Archivo local 'img/menores.jpg' -->
-                             <img src="img/menores.jpg" alt="Escuela Menores" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <!-- FOTO MENORES: Archivo local con freno de error -->
+                             <img src="img/menores.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629814467727-44a56c41b8f6?q=80&w=2574&auto=format&fit=crop'" alt="Escuela Menores" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                              <div class="absolute inset-0 bg-gradient-to-t from-brand-lime/90 to-transparent flex items-end p-8">
                                 <h3 class="text-3xl font-display font-bold text-brand-blue">MENORES</h3>
                              </div>
@@ -279,8 +278,8 @@
                     <div class="bg-white rounded-3xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-brand-lime relative">
                         <div class="absolute top-0 right-0 bg-brand-lime text-brand-blue font-bold px-4 py-1 rounded-bl-xl z-10 text-xs uppercase">Premium</div>
                         <div class="h-64 overflow-hidden relative">
-                             <!-- FOTO PARTICULARES: Archivo local 'img/particulares.jpg' -->
-                             <img src="img/particulares.jpg" alt="Clases Particulares" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                             <!-- FOTO PARTICULARES: Archivo local con freno de error -->
+                             <img src="img/particulares.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1591337819702-5c21810edd47?q=80&w=2670&auto=format&fit=crop'" alt="Clases Particulares" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-8">
                                 <h3 class="text-3xl font-display font-bold text-white">PARTICULARES</h3>
                              </div>
@@ -437,7 +436,7 @@
                     <!-- Reseña 4 -->
                     <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex items-center gap-1 mb-4 text-yellow-400"><span class="text-xl">★★★★★</span></div>
-                        <p class="text-gray-700 mb-6 italic">"Me apunté al club de Padel de San Javier porque no había jugado nunca. Decidí apuntarme para aprender y me esta enseñando el entrenador Dani. Muy profesional, tiene clases de todos los niveles y te enseña desde cero como es mi caso. Incide en la técnica para que mejor dia a dia. Sorprendido con el buen ambiente y buen rollo."</p>
+                        <p class="text-gray-700 mb-6 italic">"Me apunté al club de Padel de San Javier porque no había jugado nunca. Decidí apuntarme para aprender y me esta enseñando el entrenador Dani. Muy profesional, tiene clases de todos los niveles y te enseña desde cero como es mi caso. Incide en la técnica para que mejor dia a dia. Sorprendido con el buen ambiente y buen rollo. Muy recomendable si quieres aprender desde cero o quieres mejorar tu Padel."</p>
                         <div class="flex items-center gap-3 mt-auto">
                             <div class="w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">PG</div>
                             <div>
@@ -463,37 +462,10 @@
                 <h2 class="font-display font-bold text-3xl md:text-4xl text-brand-blue">ASÍ SE VIVE EL PÁDEL EN <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="text-brand-blue underline decoration-brand-lime hover:text-brand-lime transition-colors">@clubpadelsanjavier</a></h2>
             </div>
             
-            <div class="flex gap-4 overflow-x-auto pb-8 px-4 hide-scrollbar snap-x">
-                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1627627453472-358045618458?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
-                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1596726662705-72879599557a?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
-                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
-                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
-                    </div>
-                </a>
-                 <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
-                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
-                    </div>
-                </a>
-                 <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" class="snap-center shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg relative group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-brand-blue/80 transition-colors flex items-center justify-center">
-                         <span class="text-white opacity-0 group-hover:opacity-100 font-bold transition-opacity">Ver en Instagram ↗</span>
-                    </div>
-                </a>
+            <!-- ELFSIGHT WIDGET INTEGRADO -->
+            <div class="container mx-auto px-4">
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-24e3e68e-4194-4dd7-97fb-4d2da9fbbe6e" data-elfsight-app-lazy></div>
             </div>
         </section>
 
@@ -506,14 +478,14 @@
                 <!-- LOGO FOOTER -->
                 <div>
                     <div class="flex items-center gap-2 mb-6">
-                         <!-- LOGO FOOTER: Archivo local 'img/logo.png' -->
+                         <!-- LOGO FOOTER -->
                          <img src="img/logo.png" alt="Logo SJ" class="w-12 h-auto object-contain" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block'">
                          <h4 class="font-display font-bold text-xl">CLUB DE PÁDEL</h4>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">El club de referencia en San Javier. Donde el deporte se encuentra con la amistad. Únete a la familia.</p>
                 </div>
                 
-                <!-- CONTACTO RÁPIDO (CON ICONO WHATSAPP OFICIAL) -->
+                <!-- CONTACTO RÁPIDO -->
                 <div class="text-center md:text-left">
                     <h5 class="font-display font-bold text-lg mb-6 text-brand-lime">CONTACTO RÁPIDO</h5>
                     <a href="https://wa.me/34722193369?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20probar%20una%20clase%20gratis" target="_blank" class="inline-flex items-center gap-3 text-3xl font-bold hover:text-brand-lime transition-colors group">
@@ -526,11 +498,17 @@
                     <p class="text-gray-400 text-sm mt-4">Respondemos en menos de 1 hora.</p>
                 </div>
 
+                <!-- MAPA FOOTER -->
                 <div>
                     <h5 class="font-display font-bold text-lg mb-6 text-brand-lime">UBICACIÓN</h5>
-                    <p class="text-gray-300 mb-4">Polígono Industrial El Pino,<br>Av. de la Unión, San Javier, Murcia.</p>
-                    <div class="w-full h-32 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-                        <span class="text-gray-500 text-sm">📍 Mapa de Google Integrado</span>
+                    <p class="text-gray-300 mb-4">
+                        Polideportivo de San Javier<br>
+                        y Polígono Industrial El Pino,<br>
+                        Av. de la Unión, San Javier, Murcia.
+                    </p>
+                    <div class="w-full h-48 rounded-lg overflow-hidden border border-gray-700 shadow-md">
+                        <!-- MAPA REAL INSERTADO AQUÍ -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d407.57776719242366!2d-0.829801110214638!3d37.81084492536215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd630ff5b7fabbad%3A0xd2a0243a4e48a922!2sClub%20de%20Padel%20San%20Javier%20-%20Academia!5e0!3m2!1ses!2ses!4v1765308219061!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -604,7 +582,7 @@
         function renderCards() {
             scroller.innerHTML = coaches.map(coach => `
                 <div class="min-w-[280px] md:min-w-[320px] bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all border-2 border-transparent hover:border-brand-blue/30 group snap-center flex flex-col items-center text-center">
-                    <!-- FOTO COACH: Recuerda usar verticales 600x800 -->
+                    <!-- FOTO COACH: Recuerda usar verticales 600x800 con freno de error -->
                     <img src="${coach.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2670&auto=format&fit=crop'" class="w-56 h-72 rounded-2xl object-cover border-4 border-brand-blue group-hover:border-brand-lime transition-colors mb-6 shadow-md">
                     <div>
                         <h4 class="font-display font-bold text-2xl text-brand-blue leading-none mb-2">${coach.name}</h4>
