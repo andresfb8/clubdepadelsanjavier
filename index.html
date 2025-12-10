@@ -110,11 +110,11 @@
 
         <!-- PORTADA (HERO SECTION) -->
         <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-            <!-- Imagen de Fondo -->
+            <!-- Imagen de Fondo (PÁDEL REAL) -->
             <div class="absolute inset-0 bg-gray-900">
-                <!-- Se usa un estilo inline para poder referenciar la imagen local fácilmente -->
+                <!-- Foto: Pala de Pádel y pista azul (Archivo local) -->
                 <div class="absolute inset-0 bg-center bg-cover opacity-50" style="background-image: url('img/portada.jpg');"></div>
-                <!-- Fallback por si no existe la imagen local (Fondo azul oscuro) -->
+                <!-- Fallback por si la imagen local no está (Fondo azul oscuro) -->
                 <div class="absolute inset-0 bg-brand-blue/20"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/90 via-transparent to-black/40"></div>
             </div>
@@ -209,8 +209,8 @@
                     </div>
                     <div class="md:w-1/2 relative">
                         <div class="bg-white p-2 rounded-2xl transform rotate-3 shadow-2xl">
-                             <!-- FOTO COMUNIDAD: Genérica -->
-                             <img src="https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop" alt="Comunidad SJ" class="rounded-xl w-full object-cover h-[400px]">
+                             <!-- FOTO COMUNIDAD: Archivo local con freno de error -->
+                             <img src="img/comunidad.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1627627443183-16259042517e?q=80&w=2070&auto=format&fit=crop'" alt="Comunidad SJ" class="rounded-xl w-full object-cover h-[400px]">
                         </div>
                         <div class="absolute -bottom-6 -right-6 bg-brand-lime text-brand-blue p-6 rounded-xl shadow-lg max-w-[200px] transform -rotate-2">
                             <p class="font-display font-bold text-3xl leading-none">+150</p>
@@ -530,7 +530,7 @@
 
     <!-- LÓGICA JAVASCRIPT -->
     <script>
-        // Parche para evitar el error de ResizeObserver en algunos navegadores
+        // Parche para evitar el error de ResizeObserver
         const resizeObserverLoopErr = 'ResizeObserver loop completed with undelivered notifications.';
         window.addEventListener('error', (e) => {
             if (e.message && e.message.includes(resizeObserverLoopErr)) {
