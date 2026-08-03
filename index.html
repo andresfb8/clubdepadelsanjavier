@@ -959,7 +959,7 @@
         function renderReviews() {
             renderStaticReviews();
 
-            fetch('reviews.php')
+            fetch('/api/reviews')
                 .then(res => res.ok ? res.json() : Promise.reject())
                 .then(data => {
                     if (data && Array.isArray(data.reviews) && data.reviews.length > 0) {
