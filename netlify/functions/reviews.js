@@ -15,7 +15,7 @@ export default async () => {
     });
   }
 
-  const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews&languageCode=es&reviewsSort=newest`;
+  const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews&languageCode=es`;
 
   let googleRes;
   try {
