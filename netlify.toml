@@ -5,3 +5,17 @@
   from = "/api/reviews"
   to = "/.netlify/functions/reviews"
   status = 200
+
+# Portada según el idioma del navegador: español -> /es/, el resto -> /en/
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  force = true
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true

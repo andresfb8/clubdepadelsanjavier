@@ -4,9 +4,11 @@
 // que la CDN de Netlify sirva la misma respuesta cacheada durante 24h en vez
 // de llamar a Google en cada visita.
 
-export default async () => {
+export default async (req) => {
   const apiKey = process.env.GOOGLE_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
+  // Idioma de la página que pide las reseñas (?lang=es|en); español por defecto.
+  const lang = new URL(req.url).searchParams.get('lang') === 'en' ? 'en' : 'es';
 
   if (!apiKey || !placeId) {
     return new Response(JSON.stringify({ error: 'not_configured' }), {
@@ -15,7 +17,7 @@ export default async () => {
     });
   }
 
-  const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews&languageCode=es`;
+  const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews&languageCode=${lang}`;
 
   let googleRes;
   try {
