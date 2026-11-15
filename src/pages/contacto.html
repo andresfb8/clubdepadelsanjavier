@@ -1,0 +1,173 @@
+<!-- ============================ PAGE HERO ============================ -->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span>/</span><span aria-current="page">Contacto</span></nav>
+    <div class="page-hero__grid">
+      <div class="stack stack--md" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Hablemos</p>
+        <h1 class="display-sm">Escríbenos. Contestamos personas.</h1>
+        <p class="lede">Para reservar una clase, apuntarte a un torneo o preguntar cualquier cosa. WhatsApp es la vía más rápida; el formulario también llega.</p>
+        <div class="row">
+          <a class="btn btn--primary magnetic" href="%%WA%%" target="_blank" rel="noopener">
+            <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            WhatsApp
+            <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="btn btn--ghost" href="%%TEL_HREF%%">
+            <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>
+            %%TEL%%
+          </a>
+        </div>
+      </div>
+      <div class="page-hero__media" data-reveal style="--d:1">
+        <div class="shell">
+          <div class="core map" style="min-height:300px">
+            <iframe title="Mapa del Polideportivo Municipal de San Javier" src="https://www.google.com/maps?q=Polideportivo+Municipal+San+Javier+Murcia&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACTO =========================== -->
+<section class="section section--tight" aria-labelledby="form-title">
+  <div class="wrap split split--7-5 split--top">
+    <div class="form-card" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__dot"></span>Formulario</p>
+      <h2 class="h2 mt-2" id="form-title" style="font-size:clamp(1.7rem,2.8vw,2.4rem)">Cuéntanos qué necesitas.</h2>
+      <p class="muted mt-2">Al enviar se abre WhatsApp con el mensaje ya escrito. Así no se pierde nada y te contestamos en minutos.</p>
+
+      <form class="form mt-3" id="form-contacto" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Cómo te llamamos">
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label for="nivel">Nivel</label>
+            <select id="nivel" name="nivel">
+              <option value="">Selecciona</option>
+              <option>Nunca he jugado</option>
+              <option>Iniciación</option>
+              <option>Intermedio</option>
+              <option>Competición</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="motivo">Quiero</label>
+            <select id="motivo" name="motivo">
+              <option value="">Selecciona</option>
+              <option>Clase de prueba</option>
+              <option>Inscribirme en la academia</option>
+              <option>Clase particular</option>
+              <option>Mini torneo del viernes</option>
+              <option>Viaje de pádel</option>
+              <option>Padel camp</option>
+            </select>
+          </div>
+        </div>
+        <div class="field field--full">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Horarios que te encajan, dudas, si vienes con alguien…"></textarea>
+        </div>
+        <button class="btn btn--ink btn--block" type="submit">
+          Enviar por WhatsApp
+          <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </button>
+        <p class="form-note" data-form-note hidden></p>
+        <p class="tiny">Al enviar aceptas que te contactemos por WhatsApp. No usamos tus datos para nada más.</p>
+      </form>
+    </div>
+
+    <div class="stack stack--md" data-reveal style="--d:1">
+      <div class="loc-card">
+        <div class="loc-card__row">
+          <span class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span>
+          <div>
+            <b>Dirección</b>
+            <p>%%ADDRESS%%</p>
+            <p class="muted" style="font-size:.86rem; margin-top:.3rem">Segunda sede: Polígono Industrial El Pino.</p>
+          </div>
+        </div>
+        <div class="loc-card__row">
+          <span class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span>
+          <div>
+            <b>Horario de oficina</b>
+            <p>Lunes a viernes · 16:00–21:00<br>Sábado · 10:00–13:00</p>
+          </div>
+        </div>
+        <div class="loc-card__row">
+          <span class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+          <div>
+            <b>WhatsApp y teléfono</b>
+            <p><a href="%%TEL_HREF%%">%%TEL%%</a></p>
+          </div>
+        </div>
+        <div class="loc-card__row">
+          <span class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+          <div>
+            <b>Instagram</b>
+            <p><a href="%%IG%%" target="_blank" rel="noopener">@clubpadelsanjavier</a></p>
+          </div>
+        </div>
+      </div>
+      <a class="cta-link" href="%%MAPS%%" target="_blank" rel="noopener">
+        <span><strong>Cómo llegar</strong><small>Polideportivo Municipal, San Javier</small></span>
+        <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+      <div class="note">
+        <svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>
+        <p>¿Eres alumno? Las reservas y el seguimiento están en el <a href="area-alumnos.html" style="text-decoration:underline; text-underline-offset:3px">área de alumnos</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== MAPA ============================== -->
+<section class="section section--paper2 section--tight" aria-labelledby="mapa-title">
+  <div class="wrap">
+    <header class="head">
+      <div class="head__copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ubicación</p>
+        <h2 class="h2" id="mapa-title">En el corazón de San Javier.</h2>
+        <p class="lede">A cinco minutos del centro, con aparcamiento junto a las pistas y acceso a pie desde el municipio.</p>
+      </div>
+    </header>
+    <div class="shell" data-reveal>
+      <div class="core map" style="height:clamp(320px,45vw,520px)">
+        <iframe title="Mapa ampliado del Polideportivo Municipal de San Javier" src="https://www.google.com/maps?q=Polideportivo+Municipal+San+Javier+Murcia&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FAQ ============================== -->
+<section class="section" aria-labelledby="faq-contacto">
+  <div class="wrap split split--5-7 split--top">
+    <div class="stack stack--md" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__dot"></span>Antes de escribir</p>
+      <h2 class="h2" id="faq-contacto">Preguntas rápidas.</h2>
+    </div>
+    <div class="acc" data-reveal style="--d:1">
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-k1">¿Cuánto tardáis en contestar?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-k1" data-open="false"><div class="acc__inner"><p>Normalmente el mismo día. En fin de semana puede ser el lunes por la mañana; si es urgente, llama.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-k2">¿Puedo ir a ver una clase antes?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-k2" data-open="false"><div class="acc__inner"><p>Claro. Avísanos y te esperamos en la pista para que veas cómo trabajamos y hables con el entrenador.</p></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-k3">¿Dais clase en inglés?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-k3" data-open="false"><div class="acc__inner"><p>Sí, parte del equipo puede entrenar en inglés. Dínoslo al escribir y te asignamos entrenador.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
