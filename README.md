@@ -17,7 +17,9 @@ Rama de trabajo: `deepseek`.
 | **Clases y escuela de menores** | **Mini torneos** |
 | ![Clases](docs/preview/clases-desktop.jpg) | ![Torneos](docs/preview/torneos-desktop.jpg) |
 | **Ven a San Javier** | |
-| ![Ven a San Javier](docs/preview/viajes-desktop.jpg) | |
+| ![Ven a San Javier](docs/preview/ven-a-san-javier.jpg) | |
+| **Escuela de menores** | |
+| ![Escuela de menores](docs/preview/menores.jpg) | |
 
 ---
 
