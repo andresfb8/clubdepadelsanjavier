@@ -32,8 +32,9 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
 La página `viajes.html` ya no plantea salidas del club: está enfocada a **recibir
 jugadores** que vienen unos días a San Javier. Faltan por cerrar:
 
-- **Precios** por persona (publicados como orientativos): escapada corta 165 €,
-  semana 390 €, finde largo 240 €. Incluyen pistas, entrenador y alojamiento.
+- **Precios**: **no se publican**. Los planes se cierran con presupuesto a medida según
+  fechas, número de jugadores y alojamiento; la web solo muestra duración y
+  entrenamientos. Definir internamente la horquilla y qué incluye cada plan.
 - **Alojamientos**: no hay acuerdos cerrados todavía. Definir 2–3 opciones por
   presupuesto (hotel, apartamento, casa) y sus condiciones.
 - **Fechas**: no se publican fechas fijas, se trabaja bajo petición. Confirmar si habrá
