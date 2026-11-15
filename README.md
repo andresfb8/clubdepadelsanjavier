@@ -5,6 +5,18 @@ mini torneos de los viernes, viajes, horarios y contacto.
 
 Rama de trabajo: `deepseek`.
 
+![Home del club](docs/preview/home-desktop.jpg)
+
+---
+
+## Capturas
+
+| Home · escritorio | Home · móvil |
+| --- | --- |
+| ![Home escritorio](docs/preview/home-desktop.jpg) | ![Home móvil](docs/preview/home-movil.jpg) |
+| **Clases** | **Mini torneos** |
+| ![Clases](docs/preview/clases-desktop.jpg) | ![Torneos](docs/preview/torneos-desktop.jpg) |
+
 ---
 
 ## Páginas
