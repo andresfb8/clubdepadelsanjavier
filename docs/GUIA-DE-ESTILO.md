@@ -1,32 +1,38 @@
 # Guía de estilo — Club de Pádel San Javier
 
-Sistema de diseño del sitio. Todo vive en `assets/css/site.css` (tokens, tipografía,
+Sistema de diseño del sitio, alineado con los colores del club (azul y lima) y con una
+base clara de aire deportivo. Todo vive en `assets/css/site.css` (tokens, tipografía,
 layout, navegación) y `assets/css/components.css` (componentes).
 
 ## Concepto
 
-Deporte mediterráneo, limpio y premium. Base de papel arena, tinta verde-marino muy
-oscura, lima de pelota solo para acción, y coral como único acento cálido. Sin neones,
-sin degradados morados, sin tarjetas flotando en el vacío: los bloques se apoyan en
-"bandejas" (doble bisel) y el aire hace el resto.
+Deporte moderno, limpio y con energía. Fondo claro y frío (blanco y gris azulado), tinta
+azul noche, **azul club** como color de identidad y acción, y **lima** como acento
+deportivo reservado. Sin degradados de colores, sin sombras duras, sin estridencias.
 
 ## Color
 
 | Token | Valor | Uso |
 | --- | --- | --- |
-| `--paper` | `#F4F0E7` | Fondo base (papel arena) |
-| `--paper-2` | `#FBF8F1` | Superficies y tarjetas |
-| `--ink` | `#0A1E1B` | Texto principal y secciones oscuras |
-| `--ink-2` | `#123330` | Superficie oscura elevada |
-| `--sea` | `#0E4A42` | Verde pista, enlaces y datos |
-| `--lime` | `#D8F14B` | CTA principal y acentos |
-| `--lime-deep` | `#C6E02F` | Hover del CTA |
-| `--coral` | `#FF6A4D` | Punto de atención, badges vivos |
-| `--muted` | `rgba(10,30,27,.62)` | Texto secundario |
-| `--line` | `rgba(10,30,27,.14)` | Hairline estándar |
+| `--paper` | `#F4F6FA` | Fondo base (gris azulado muy claro) |
+| `--paper-2` | `#FFFFFF` | Tarjetas y superficies |
+| `--ink` | `#0F172A` | Texto principal y secciones oscuras |
+| `--ink-2` | `#16213C` | Superficie oscura elevada |
+| `--blue` | `#1D4CAF` | **Azul club**: CTA principal sobre claro, enlaces y puntos |
+| `--blue-deep` | `#143B8A` | Hover del azul, datos y cifras |
+| `--lime` | `#A9C93A` | **Lima club**: CTA sobre fondo oscuro, badges y acentos |
+| `--lime-deep` | `#94B22C` | Hover del lima |
+| `--sand` | `#E4E9F2` | Placeholder de imagen, superficies neutras |
+| `--muted` | `rgba(15,23,42,.62)` | Texto secundario |
+| `--line` | `rgba(15,23,42,.14)` | Hairline estándar |
 
-Reglas: el lima **nunca** lleva texto claro; siempre tinta. El coral no se usa para
-texto pequeño sobre arena (contraste insuficiente): solo puntos, badges y detalles.
+### Reglas de uso
+
+- **Un CTA principal por pantalla.** Sobre fondo claro es azul; sobre fondo oscuro (tour,
+  CTA band, footer, área de alumnos) pasa automáticamente a lima con texto tinta.
+- El lima **nunca** lleva texto blanco: siempre tinta azul noche (contraste > 8:1).
+- El azul se usa también para enlaces, iconos de check y el punto de las etiquetas.
+- El coral desaparece: ya no forma parte de la paleta.
 
 ## Tipografía
 
@@ -39,7 +45,7 @@ texto pequeño sobre arena (contraste insuficiente): solo puntos, badges y detal
   - h3: `clamp(1.35rem, 2vw, 1.85rem)`
   - cuerpo: `clamp(1rem, .96rem + .16vw, 1.075rem)`
 - El contraste editorial del hero se consigue con **peso y ancho** (`font-weight: 300;
-  font-stretch: 82%`), no con una segunda familia.
+  font-stretch: 82%`) y con **azul club** en la segunda línea, no con otra familia.
 
 ## Espacio y forma
 
@@ -53,12 +59,14 @@ texto pequeño sobre arena (contraste insuficiente): solo puntos, badges y detal
 - **Doble bisel (`.shell` + `.core`)**: bandeja exterior con hairline y padding de 10 px,
   contenido dentro con radio concéntrico. Aplica a imágenes, mapas y vídeo.
 - **Botones (`.btn`)**: píldora, icono en círculo anidado a la derecha que se desplaza
-  `2px/-2px` en hover; `active: scale(.985)`. Variantes: `--primary` (lima), `--ink`,
-  `--ghost`, `--light`, `--outline-light`, `--sm`, `--lg`, `--block`.
-- **Eyebrow**: píldora con punto coral, versalitas y `letter-spacing: .2em`.
+  `2px/-2px` en hover; `active: scale(.985)`. Variantes: `--primary` (azul en claro,
+  lima en oscuro), `--ink`, `--ghost`, `--light`, `--outline-light`, `--sm`, `--lg`.
+- **Eyebrow**: píldora con punto azul, versalitas y `letter-spacing: .2em`.
 - **Tarjetas**: `.card`, `.level`, `.reason`, `.price-card`, `.quote`, `.team-card`.
 - **Raíl horizontal**: `.rail` con snap, flechas que se desactivan en los extremos.
 - **Acordeón**: botón con icono `+` que rota 45°; panel con `grid-template-rows 0fr→1fr`.
+- **Menús desplegables**: `Clases` y `Experiencias` comparten el mismo componente
+  (`.nav__drop` + `.nav__panel`), con apertura por teclado, hover y Esc.
 
 ## Movimiento
 
@@ -80,15 +88,15 @@ Nada de librerías de iconos.
 ## Voz y microcopy
 
 - Español de tú, directo, sin superlativos de folleto.
-- CTA siempre orientados a acción real: «Reservar clase», «Apúntate al torneo del
-  viernes», «Ver próximos viajes», «Área de alumnos».
-- Se admiten guiños («El viernes se juega», «Tu pádel, en orden»), nunca bromas que
+- CTA orientados a acción real: «Reservar clase», «Apúntate al torneo del viernes»,
+  «Ven a San Javier», «Área de alumnos».
+- Se admiten guiños («El viernes se juega», «También hay cantera»), nunca bromas que
   oculten información.
 
 ## Accesibilidad
 
-- Contraste mínimo AA en texto y en botones.
-- Foco visible de 2 px (lima sobre fondo oscuro, tinta sobre claro).
+- Contraste mínimo AA en texto y botones; lima y azul siempre con el texto adecuado.
+- Foco visible de 2 px (tinta sobre claro, lima sobre oscuro).
 - Objetivos táctiles ≥ 44 px; barra móvil fija con Reservar y Alumnos.
 - Texto alternativo descriptivo en todas las imágenes; iconos decorativos con
   `aria-hidden`.

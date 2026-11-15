@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Academia de pádel en San Javier · Club de Pádel San Javier</title>
   <meta name="description" content="Clases de pádel en San Javier, Mar Menor. Clases particulares, academia, mini torneos los viernes y viajes de pádel. Reserva tu clase de prueba.">
-  <meta name="theme-color" content="#0a1e1b">
+  <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Club de Pádel San Javier">
@@ -34,16 +34,32 @@
       <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
       <nav class="nav__links" aria-label="Navegación principal">
-        <a class="nav__link" href="clases.html">Clases</a><div class="nav__drop">
+        <div class="nav__drop" data-drop>
+          <button class="nav__drop-btn" type="button" id="clases-btn" aria-expanded="false" aria-controls="clases-panel">
+            Clases <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="nav__panel" id="clases-panel" data-open="false">
+            <a class="nav__panel-link" href="clases.html#adultos">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
+              <span><strong>Clases de adultos</strong><span>Iniciación, intermedio y competición</span></span>
+            </a><a class="nav__panel-link" href="clases.html#menores">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-ball"/></svg></span>
+              <span><strong>Escuela de menores</strong><span>Desde 6 años, después del cole</span></span>
+            </a><a class="nav__panel-link" href="clases.html#precios">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span>
+              <span><strong>Precios y formatos</strong><span>Escuela, particulares y bonos</span></span>
+            </a>
+          </div>
+        </div><div class="nav__drop" data-drop>
           <button class="nav__drop-btn" type="button" id="exp-btn" aria-expanded="false" aria-controls="exp-panel">
             Experiencias <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
           </button>
@@ -51,10 +67,9 @@
             <a class="nav__panel-link" href="torneos.html">
               <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-trophy"/></svg></span>
               <span><strong>Mini torneos del viernes</strong><span>Cada viernes, plazas limitadas</span></span>
-            </a>
-            <a class="nav__panel-link" href="viajes.html">
-              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-plane"/></svg></span>
-              <span><strong>Viajes de pádel</strong><span>Fines de semana fuera de casa</span></span>
+            </a><a class="nav__panel-link" href="viajes.html">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-waves"/></svg></span>
+              <span><strong>Ven a San Javier</strong><span>Pádel + Mar Menor, con estancia</span></span>
             </a>
           </div>
         </div><a class="nav__link" href="entrenadores.html">Entrenadores</a><a class="nav__link" href="horarios.html">Horarios</a><a class="nav__link" href="academia.html">Academia</a><a class="nav__link" href="contacto.html">Contacto</a>
@@ -73,7 +88,7 @@
   </header>
 <div class="menu" id="menu" data-open="false" aria-hidden="true">
     <nav aria-label="Menú móvil">
-      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="index.html" style="--i:0" aria-current="page">Inicio<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:1">Clases<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3">Viajes<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
+      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:0">Clases<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html#menores" style="--i:1">Escuela de menores<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3">Ven a San Javier<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
     </nav>
     <div class="menu__foot">
       <a href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -88,7 +103,7 @@
     <div class="hero__copy">
       <p class="eyebrow"><span class="eyebrow__dot"></span>Academia de pádel · San Javier · Mar Menor</p>
       <h1 class="display">Juega mejor.<span class="line-2">Vive el club.</span></h1>
-      <p class="lede">Clases de pádel en San Javier para todos los niveles, mini torneos cada viernes y viajes que se recuerdan. Aquí se entrena en serio y se disfruta todavía más.</p>
+      <p class="lede">Clases de pádel en San Javier para todos los niveles, mini torneos cada viernes y un club abierto a quien viene a jugar al Mar Menor. Aquí se entrena en serio y se disfruta todavía más.</p>
       <div class="hero__cta">
         <a class="btn btn--primary btn--lg magnetic" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba%20en%20el%20club%20de%20p%C3%A1del%20de%20San%20Javier." target="_blank" rel="noopener">
           Reserva tu clase de prueba
@@ -134,13 +149,13 @@
   <div class="marquee__track">
     <span class="marquee__item">Clases de pádel en San Javier</span>
     <span class="marquee__item">Mini torneos los viernes</span>
-    <span class="marquee__item">Viajes de pádel</span>
+    <span class="marquee__item">Pádel + Mar Menor</span>
     <span class="marquee__item">Mar Menor</span>
     <span class="marquee__item">Grupos por nivel</span>
     <span class="marquee__item">Entrenadores titulados</span>
     <span class="marquee__item">Clases de pádel en San Javier</span>
     <span class="marquee__item">Mini torneos los viernes</span>
-    <span class="marquee__item">Viajes de pádel</span>
+    <span class="marquee__item">Pádel + Mar Menor</span>
     <span class="marquee__item">Mar Menor</span>
     <span class="marquee__item">Grupos por nivel</span>
     <span class="marquee__item">Entrenadores titulados</span>
@@ -187,8 +202,8 @@
       <article class="reason bento__c" data-reveal style="--d:3">
         <div class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></div>
         <span class="reason__num">03 — Comunidad</span>
-        <h3>Viernes, viajes y buen ambiente</h3>
-        <p>El club se juega, pero también se vive: torneos sociales, viajes y cañas después.</p>
+        <h3>Viernes, cantera y buen ambiente</h3>
+        <p>El club se juega, pero también se vive: torneos sociales, cantera y cañas después.</p>
       </article>
     </div>
   </div>
@@ -284,6 +299,39 @@
   </div>
 </section>
 
+<!-- ============================ MENORES ============================= -->
+<section class="section section--paper2" aria-labelledby="menores-home">
+  <div class="wrap split split--5-7">
+    <div class="shell" data-reveal>
+      <div class="core media media--3-2">
+        <img src="assets/img/menores.webp" width="1200" height="800" loading="lazy" decoding="async"
+             alt="Alumno de la escuela de menores del club en la pista al atardecer">
+        <div class="media__scrim"></div>
+        <div class="media__foot"><span class="badge badge--lime">Escuela de menores</span></div>
+      </div>
+    </div>
+
+    <div class="stack stack--md" data-reveal style="--d:1">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>De 6 a 14 años</p>
+      <h2 class="h2" id="menores-home">También hay cantera.</h2>
+      <p class="lede">La escuela de menores es el otro corazón del club. Grupos por edad y nivel, después del colegio, con la técnica y el juego adaptados a cada etapa.</p>
+      <ul class="checklist">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Grupos por edad y nivel</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>De lunes a viernes, por la tarde</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Material de iniciación incluido</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>20 €/mes · 370 € temporada</li>
+      </ul>
+      <div class="row">
+        <a class="btn btn--primary" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20escuela%20de%20menores." target="_blank" rel="noopener">
+          Pide una clase de prueba
+          <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="link-arrow" href="clases.html#menores">Ver la escuela de menores <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================= VIERNES ============================= -->
 <section class="section tour" aria-labelledby="viernes">
   <div class="wrap tour__grid">
@@ -329,70 +377,70 @@
   </div>
 </section>
 
-<!-- ============================== VIAJES ============================= -->
+<!-- ======================== VEN A SAN JAVIER ========================= -->
 <section class="section" aria-labelledby="viajes-home">
   <div class="wrap">
     <header class="head">
       <div class="head__copy" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__dot"></span>Viajes de pádel</p>
-        <h2 class="h2" id="viajes-home">San Javier · Mar Menor · plazas limitadas.</h2>
-        <p class="lede">Salimos del club para jugar fuera, conocer pistas nuevas y volver con un grupo más unido. Fines de semana con pádel, estancia y buena mesa.</p>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ven a San Javier</p>
+        <h2 class="h2" id="viajes-home">Pádel por la mañana. Mar Menor el resto del día.</h2>
+        <p class="lede">Recibimos jugadores de fuera todo el año: pistas, entrenador y alojamiento en San Javier. Tú pones las fechas; nosotros el plan, el entorno y las mejores horas de pista.</p>
       </div>
       <a class="btn btn--ghost" href="viajes.html" data-reveal style="--d:1">
-        Ver próximos viajes
+        Ver planes y fechas
         <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
       </a>
     </header>
 
     <div data-reveal>
       <div class="rail" data-rail>
-        <button class="rail__btn" type="button" data-rail-prev aria-label="Viajes anteriores">
+        <button class="rail__btn" type="button" data-rail-prev aria-label="Planes anteriores">
           <svg class="i" aria-hidden="true"><use href="#i-chevron-left"/></svg>
         </button>
         <div class="rail__track">
-          <a class="trip rail__item" href="viajes.html#valencia">
-            <img src="assets/img/coast.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Costa mediterránea al atardecer">
+          <a class="trip rail__item" href="viajes.html#planes">
+            <img src="assets/img/playa-santiago.webp" width="1000" height="1250" loading="lazy" decoding="async" alt="Playa de Santiago de la Ribera con palmeras">
             <div class="trip__body">
-              <div class="trip__top"><span class="badge badge--lime">27–29 nov</span><span class="badge badge--ghost-dark">Plazas limitadas</span></div>
-              <h3 class="h3">Valencia · pádel y ciudad</h3>
-              <p>Dos días de pistas, mercado y cena de grupo. El clásico para empezar a viajar con el club.</p>
+              <div class="trip__top"><span class="badge badge--lime">2 noches</span><span class="badge badge--ghost-dark">Todo el año</span></div>
+              <h3 class="h3">Escapada corta</h3>
+              <p>Un fin de semana de pistas y playa. La forma más fácil de conocer el club y la zona.</p>
               <div class="trip__row">
-                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Nivel medio</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Tu nivel</span>
                 <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>2 noches</span>
-                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>4 partidos</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>3 entrenos</span>
               </div>
             </div>
           </a>
 
-          <a class="trip rail__item" href="viajes.html#sierra">
-            <img src="assets/img/snow.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Cumbres nevadas de Sierra Nevada">
+          <a class="trip rail__item" href="viajes.html#planes">
+            <img src="assets/img/mar-menor-boats.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Veleros fondeados en el Mar Menor">
             <div class="trip__body">
-              <div class="trip__top"><span class="badge badge--lime">12–14 dic</span><span class="badge badge--ghost-dark">Plazas limitadas</span></div>
-              <h3 class="h3">Sierra Nevada · pádel y nieve</h3>
-              <p>Mañana en pista, tarde en la montaña. Para quien quiere desconectar de verdad un fin de semana.</p>
+              <div class="trip__top"><span class="badge badge--lime">5 noches</span><span class="badge badge--ghost-dark">El más pedido</span></div>
+              <h3 class="h3">Semana de pádel</h3>
+              <p>Seis entrenamientos, partidos guiados y una tarde libre para La Manga o Cartagena.</p>
               <div class="trip__row">
-                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Nivel medio</span>
-                <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>2 noches</span>
-                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>3 partidos</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Tu nivel</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>5 noches</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>6 entrenos</span>
               </div>
             </div>
           </a>
 
-          <a class="trip rail__item" href="viajes.html#mallorca">
-            <img src="assets/img/cove.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Cala de aguas turquesas vista desde el aire">
+          <a class="trip rail__item" href="viajes.html#planes">
+            <img src="assets/img/mar-menor-sunset.webp" width="1400" height="788" loading="lazy" decoding="async" alt="Atardecer sobre el Mar Menor con veleros">
             <div class="trip__body">
-              <div class="trip__top"><span class="badge badge--lime">5–8 mar 2027</span><span class="badge badge--ghost-dark">Plazas limitadas</span></div>
-              <h3 class="h3">Mallorca · padel week</h3>
-              <p>Cuatro días, dos clubs y playa. El viaje grande de la temporada, con tiempo para todo.</p>
+              <div class="trip__top"><span class="badge badge--lime">3 noches</span><span class="badge badge--ghost-dark">Puentes</span></div>
+              <h3 class="h3">Finde largo</h3>
+              <p>Para puentes y grupos: cuatro entrenos y una ruta por el entorno con el club.</p>
               <div class="trip__row">
-                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Todos los niveles</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Tu nivel</span>
                 <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>3 noches</span>
-                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>6 partidos</span>
+                <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>4 entrenos</span>
               </div>
             </div>
           </a>
         </div>
-        <button class="rail__btn" type="button" data-rail-next aria-label="Más viajes">
+        <button class="rail__btn" type="button" data-rail-next aria-label="Más planes">
           <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg>
         </button>
       </div>
@@ -478,12 +526,12 @@
 
     <div class="stack stack--md" data-reveal style="--d:1">
       <p class="eyebrow"><span class="eyebrow__dot"></span>Así se vive</p>
-      <h2 class="h2" id="vivelo">De la clase al torneo. Y del torneo al viaje.</h2>
-      <p class="lede">La academia es el punto de partida, pero el club es lo que pasa después: la partida del jueves, el americano del viernes, el viaje de primavera. Todo empieza con una clase.</p>
+      <h2 class="h2" id="vivelo">De la clase al torneo. Y del torneo, a la playa.</h2>
+      <p class="lede">La academia es el punto de partida, pero el club es lo que pasa después: la partida del jueves, el americano del viernes, la tarde de playa después. Todo empieza con una clase.</p>
       <ul class="checklist">
         <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Clases durante todo el año</li>
         <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Torneo social cada viernes</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Viajes con plazas limitadas</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Pádel + estancia en San Javier</li>
         <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Comunidad en Instagram</li>
       </ul>
       <div class="row">
@@ -654,15 +702,15 @@
           <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
-          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, mini torneos los viernes y viajes que se recuerdan.</p>
+          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, escuela de menores, mini torneos los viernes y pádel + estancia para quien viene a jugar.</p>
           <div class="footer__cta">
             <a class="btn btn--primary btn--sm" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba%20en%20el%20club%20de%20p%C3%A1del%20de%20San%20Javier." target="_blank" rel="noopener">Reserva tu clase<span class="btn__icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
             <a class="btn btn--outline-light btn--sm" href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -671,7 +719,8 @@
         <div class="footer__col">
           <h3>Academia</h3>
           <div class="footer__links">
-            <a href="clases.html">Clases de pádel</a>
+            <a href="clases.html">Clases de adultos</a>
+            <a href="clases.html#menores">Escuela de menores</a>
             <a href="academia.html">La academia</a>
             <a href="entrenadores.html">Entrenadores</a>
             <a href="horarios.html">Horarios y precios</a>
@@ -682,7 +731,7 @@
           <h3>Experiencias</h3>
           <div class="footer__links">
             <a href="torneos.html">Mini torneos de los viernes</a>
-            <a href="viajes.html">Viajes de pádel</a>
+            <a href="viajes.html">Ven a San Javier</a>
             <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" rel="noopener">Comunidad en Instagram</a>
             <a href="contacto.html">Contacto y ubicación</a>
           </div>

@@ -14,8 +14,10 @@ Rama de trabajo: `deepseek`.
 | Home · escritorio | Home · móvil |
 | --- | --- |
 | ![Home escritorio](docs/preview/home-desktop.jpg) | ![Home móvil](docs/preview/home-movil.jpg) |
-| **Clases** | **Mini torneos** |
+| **Clases y escuela de menores** | **Mini torneos** |
 | ![Clases](docs/preview/clases-desktop.jpg) | ![Torneos](docs/preview/torneos-desktop.jpg) |
+| **Ven a San Javier** | |
+| ![Ven a San Javier](docs/preview/viajes-desktop.jpg) | |
 
 ---
 
@@ -24,9 +26,9 @@ Rama de trabajo: `deepseek`.
 | Archivo | Contenido |
 | --- | --- |
 | `index.html` | Home: hero, beneficios, niveles, torneo del viernes, viajes, equipo, precios, reseñas, ubicación y CTA final |
-| `clases.html` | Niveles, formatos, precios, método y FAQ |
+| `clases.html` | Niveles de adultos, escuela de menores, formatos, precios, método y FAQ |
 | `torneos.html` | Próximo torneo, calendario, formato, ranking y galería |
-| `viajes.html` | Filosofía de viaje, tres destinos, condiciones y galería |
+| `viajes.html` | Ven a San Javier: pádel + estancia, planes, entorno y versión en inglés |
 | `academia.html` | Quiénes somos, metodología, instalaciones, escuela de menores y padel camp |
 | `entrenadores.html` | Equipo, especialidades y coordinación |
 | `horarios.html` | Horario semanal, cuotas, particulares y bonos |
@@ -142,6 +144,11 @@ python tools/media.py
 ## Estado
 
 - Maqueta funcional lista para revisión de negocio y contenido.
+- Paleta alineada con los colores del club (azul `#1D4CAF` + lima `#A9C93A`): el CTA
+  principal es azul sobre fondo claro y lima sobre fondo oscuro.
+- La escuela de menores tiene sección propia en la home, en Clases y en el menú.
+- «Viajes» pasa a ser **Ven a San Javier**: recibimos jugadores de fuera, no organizamos
+  salidas del club.
 - El login del área de alumnos es visual: falta conectar el sistema de reservas.
 - Los datos marcados como provisionales están listados en
   [`docs/CONTENIDO-PENDIENTE.md`](docs/CONTENIDO-PENDIENTE.md).

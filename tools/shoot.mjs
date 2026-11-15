@@ -25,6 +25,7 @@ const widths = (arg("w", "1440") || "").split(",").map(Number);
 const viewportH = Number(arg("h", "900"));
 const outDir = path.resolve(arg("out", ".tmp/shots"));
 const full = !process.argv.includes("--viewport");
+const preEval = arg("eval", "");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -158,6 +159,7 @@ async function main() {
           awaitPromise: true,
         });
         await sleep(700);
+        if (preEval) { await cdp.send("Runtime.evaluate", { expression: preEval, awaitPromise: true }); await sleep(800); }
 
         const metrics = await cdp.send("Runtime.evaluate", {
           expression: "document.documentElement.scrollHeight",

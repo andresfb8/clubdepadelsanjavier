@@ -35,45 +35,43 @@
   );
   onScroll();
 
-  /* ------------------------------------------------------- dropdown menu */
-  const dropBtn = document.getElementById("exp-btn");
-  const dropPanel = document.getElementById("exp-panel");
-  let closeTimer = null;
+  /* ------------------------------------------------------- dropdown menus */
+  const drops = Array.from(document.querySelectorAll("[data-drop]")).map((wrap) => {
+    const btn = wrap.querySelector(".nav__drop-btn");
+    const panel = wrap.querySelector(".nav__panel");
+    let timer = null;
 
-  function setDrop(open) {
-    if (!dropBtn || !dropPanel) return;
-    dropBtn.setAttribute("aria-expanded", String(open));
-    dropPanel.setAttribute("data-open", String(open));
-  }
+    const set = (open) => {
+      btn.setAttribute("aria-expanded", String(open));
+      panel.setAttribute("data-open", String(open));
+    };
 
-  if (dropBtn && dropPanel) {
-    const wrap = dropBtn.closest(".nav__drop");
-
-    dropBtn.addEventListener("click", (e) => {
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
-      setDrop(dropBtn.getAttribute("aria-expanded") !== "true");
+      set(btn.getAttribute("aria-expanded") !== "true");
     });
-
     wrap.addEventListener("mouseenter", () => {
       if (!finePointer) return;
-      clearTimeout(closeTimer);
-      setDrop(true);
+      clearTimeout(timer);
+      set(true);
     });
     wrap.addEventListener("mouseleave", () => {
       if (!finePointer) return;
-      closeTimer = window.setTimeout(() => setDrop(false), 140);
+      timer = window.setTimeout(() => set(false), 140);
     });
-
     document.addEventListener("click", (e) => {
-      if (!wrap.contains(e.target)) setDrop(false);
+      if (!wrap.contains(e.target)) set(false);
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && dropBtn.getAttribute("aria-expanded") === "true") {
-        setDrop(false);
-        dropBtn.focus();
+      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") {
+        set(false);
+        btn.focus();
       }
     });
-  }
+
+    return { wrap, btn, set };
+  });
+  void drops;
 
   /* --------------------------------------------------------- mobile menu */
   const burger = document.getElementById("burger");

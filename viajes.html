@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Viajes de pádel · San Javier y Mar Menor</title>
-  <meta name="description" content="Viajes de pádel desde San Javier: destinos, fechas, niveles y qué incluye. Fines de semana de pádel y comunidad en el Mar Menor.">
-  <meta name="theme-color" content="#0a1e1b">
+  <title>Ven a jugar a San Javier · Pádel y Mar Menor</title>
+  <meta name="description" content="Escapadas de pádel en San Javier: entrenamiento, alojamiento y Mar Menor. Planes de fin de semana a una semana para jugadores de todos los niveles.">
+  <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Club de Pádel San Javier">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="Viajes de pádel · San Javier y Mar Menor">
-  <meta property="og:description" content="Viajes de pádel desde San Javier: destinos, fechas, niveles y qué incluye. Fines de semana de pádel y comunidad en el Mar Menor.">
+  <meta property="og:title" content="Ven a jugar a San Javier · Pádel y Mar Menor">
+  <meta property="og:description" content="Escapadas de pádel en San Javier: entrenamiento, alojamiento y Mar Menor. Planes de fin de semana a una semana para jugadores de todos los niveles.">
   <meta property="og:image" content="assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,16 +33,32 @@
       <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
       <nav class="nav__links" aria-label="Navegación principal">
-        <a class="nav__link" href="clases.html">Clases</a><div class="nav__drop">
+        <div class="nav__drop" data-drop>
+          <button class="nav__drop-btn" type="button" id="clases-btn" aria-expanded="false" aria-controls="clases-panel">
+            Clases <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="nav__panel" id="clases-panel" data-open="false">
+            <a class="nav__panel-link" href="clases.html#adultos">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
+              <span><strong>Clases de adultos</strong><span>Iniciación, intermedio y competición</span></span>
+            </a><a class="nav__panel-link" href="clases.html#menores">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-ball"/></svg></span>
+              <span><strong>Escuela de menores</strong><span>Desde 6 años, después del cole</span></span>
+            </a><a class="nav__panel-link" href="clases.html#precios">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span>
+              <span><strong>Precios y formatos</strong><span>Escuela, particulares y bonos</span></span>
+            </a>
+          </div>
+        </div><div class="nav__drop" data-drop>
           <button class="nav__drop-btn" type="button" id="exp-btn" aria-expanded="false" aria-controls="exp-panel" aria-current="page">
             Experiencias <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
           </button>
@@ -50,10 +66,9 @@
             <a class="nav__panel-link" href="torneos.html">
               <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-trophy"/></svg></span>
               <span><strong>Mini torneos del viernes</strong><span>Cada viernes, plazas limitadas</span></span>
-            </a>
-            <a class="nav__panel-link" href="viajes.html">
-              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-plane"/></svg></span>
-              <span><strong>Viajes de pádel</strong><span>Fines de semana fuera de casa</span></span>
+            </a><a class="nav__panel-link" href="viajes.html">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-waves"/></svg></span>
+              <span><strong>Ven a San Javier</strong><span>Pádel + Mar Menor, con estancia</span></span>
             </a>
           </div>
         </div><a class="nav__link" href="entrenadores.html">Entrenadores</a><a class="nav__link" href="horarios.html">Horarios</a><a class="nav__link" href="academia.html">Academia</a><a class="nav__link" href="contacto.html">Contacto</a>
@@ -72,7 +87,7 @@
   </header>
 <div class="menu" id="menu" data-open="false" aria-hidden="true">
     <nav aria-label="Menú móvil">
-      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="index.html" style="--i:0">Inicio<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:1">Clases<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3" aria-current="page">Viajes<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
+      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:0">Clases<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html#menores" style="--i:1">Escuela de menores<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3" aria-current="page">Ven a San Javier<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
     </nav>
     <div class="menu__foot">
       <a href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -83,25 +98,25 @@
 <main id="main"><!-- ============================ PAGE HERO ============================ -->
 <section class="page-hero">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span>/</span><a href="index.html#viajes-home">Experiencias</a><span>/</span><span aria-current="page">Viajes</span></nav>
+    <nav class="crumbs" aria-label="Migas de pan"><a href="index.html">Inicio</a><span>/</span><a href="index.html#viajes-home">Experiencias</a><span>/</span><span aria-current="page">Ven a San Javier</span></nav>
     <div class="page-hero__grid">
       <div class="stack stack--md" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__dot"></span>San Javier · Mar Menor · plazas limitadas</p>
-        <h1 class="display-sm">Pádel fuera de casa. Grupo del club.</h1>
-        <p class="lede">Fines de semana con pistas reservadas, estancia y mesa compartida. Salimos pocos y volvemos más equipo: esa es la idea.</p>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Pádel + Mar Menor · todo el año</p>
+        <h1 class="display-sm">Ven a jugar. Quédate por el Mar Menor.</h1>
+        <p class="lede">Escapadas de pádel en San Javier para quien viene de fuera: entrenas por la mañana, comes en el puerto y la tarde es para la playa, La Manga o Cartagena. Nosotros ponemos las pistas y el plan.</p>
         <div class="row">
-          <a class="btn btn--primary magnetic" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
-            Información y plazas
+          <a class="btn btn--primary magnetic" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">
+            Cuéntanos tus fechas
             <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
-          <a class="btn btn--ghost" href="#proximos">Ver próximos viajes</a>
+          <a class="btn btn--ghost" href="#planes">Ver planes</a>
         </div>
       </div>
       <div class="page-hero__media" data-reveal style="--d:1">
         <div class="shell">
           <div class="core media media--3-2">
             <img src="assets/img/cove.webp" width="1200" height="800" fetchpriority="high" decoding="async"
-                 alt="Cala mediterránea de aguas turquesas vista desde el aire">
+                 alt="Cala del Mediterráneo con aguas turquesas vista desde el aire">
           </div>
         </div>
       </div>
@@ -109,198 +124,210 @@
   </div>
 </section>
 
-<!-- =========================== INTRO / FILOSOFÍA ===================== -->
-<section class="section section--tight" aria-labelledby="filosofia-viajes">
-  <div class="wrap split split--7-5">
-    <div class="stack stack--md" data-reveal>
-      <p class="eyebrow"><span class="eyebrow__dot"></span>Cómo viajamos</p>
-      <h2 class="h2" id="filosofia-viajes">Tres o cuatro días. Pádel, gente y sitio bonito.</h2>
-      <p class="lede">No organizamos un torneo con hotel: organizamos un plan. Se juega por la mañana, se come en grupo y la tarde es para lo que apetezca. Los niveles se mezclan a propósito.</p>
-    </div>
-    <ul class="checklist" data-reveal style="--d:1">
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Pistas reservadas y bolas incluidas</li>
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Alojamiento propuesto por el club</li>
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Grupo de 12 a 20 personas</li>
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Coordinación y acompañamiento</li>
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Momentos de pista y de mesa</li>
-      <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Plazas limitadas por fecha</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================ PRÓXIMOS ============================= -->
-<section class="section section--paper2" id="proximos" aria-labelledby="proximos-title">
+<!-- =========================== CÓMO FUNCIONA ======================== -->
+<section class="section section--tight" aria-labelledby="como">
   <div class="wrap">
     <header class="head">
       <div class="head__copy" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__dot"></span>Próximos destinos</p>
-        <h2 class="h2" id="proximos-title">Elige tu fin de semana.</h2>
-        <p class="lede">Tres salidas confirmadas para la temporada. Cada viaje tiene su nivel recomendado y su propio plan.</p>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Cómo funciona</p>
+        <h2 class="h2" id="como">Tú pones las fechas. Nosotros, el resto.</h2>
+        <p class="lede">No es un torneo con hotel: es una escapada a tu medida. Nos dices cuándo vienes, cuánto juegas y qué nivel tienes; te devolvemos un plan cerrado con pistas, entrenador y alojamiento.</p>
       </div>
-      <span class="badge badge--lime" data-reveal style="--d:1">Reservas abiertas</span>
     </header>
 
-    <!-- VALENCIA -->
-    <article class="trip-detail" id="valencia">
-      <div class="trip-detail__media">
-        <div class="shell">
-          <div class="core media media--wide">
-            <img src="assets/img/coast.webp" width="1200" height="900" loading="lazy" decoding="async"
-                 alt="Vista aérea de la costa con puerto y playa">
-            <span class="media__tag badge badge--lime">27–29 nov</span>
-          </div>
-        </div>
-      </div>
-      <div class="trip-detail__body">
-        <p class="tiny">Valencia · Comunitat Valenciana</p>
-        <h3 class="h2" style="font-size:clamp(1.8rem,3vw,2.6rem)">Valencia · pádel y ciudad</h3>
-        <p class="muted">El viaje para empezar. Dos noches, pistas reservadas y tiempo para el centro, el mercado y una cena de grupo que se alarga.</p>
-        <div class="trip-detail__meta">
-          <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>27–29 nov 2026</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Nivel medio · 16 plazas</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>4 partidos</span>
-        </div>
-        <ul class="level__list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2 noches de alojamiento y desayuno</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Pistas, bolas y coordinador del club</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Cena de grupo del sábado</li>
-        </ul>
-        <div class="level__foot">
-          <p class="trip-detail__price"><small>Desde</small>165 € / persona</p>
-          <a class="btn btn--ink" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
-            Reservar plaza
-            <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- SIERRA NEVADA -->
-    <article class="trip-detail trip-detail--flip" id="sierra">
-      <div class="trip-detail__media">
-        <div class="shell">
-          <div class="core media media--wide">
-            <img src="assets/img/snow.webp" width="1200" height="900" loading="lazy" decoding="async"
-                 alt="Cumbres nevadas con niebla en la montaña">
-            <span class="media__tag badge badge--lime">12–14 dic</span>
-          </div>
-        </div>
-      </div>
-      <div class="trip-detail__body">
-        <p class="tiny">Sierra Nevada · Granada</p>
-        <h3 class="h2" style="font-size:clamp(1.8rem,3vw,2.6rem)">Sierra Nevada · pádel y nieve</h3>
-        <p class="muted">Mañana en pista, tarde en la montaña. Para quien quiere desconectar de verdad un fin de semana y volver con la cabeza limpia.</p>
-        <div class="trip-detail__meta">
-          <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>12–14 dic 2026</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Nivel medio · 12 plazas</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>3 partidos</span>
-        </div>
-        <ul class="level__list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2 noches en apartamento de grupo</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Pistas cubiertas y bolas</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tiempo libre para subir a la estación</li>
-        </ul>
-        <div class="level__foot">
-          <p class="trip-detail__price"><small>Desde</small>195 € / persona</p>
-          <a class="btn btn--ink" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
-            Reservar plaza
-            <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <!-- MALLORCA -->
-    <article class="trip-detail" id="mallorca">
-      <div class="trip-detail__media">
-        <div class="shell">
-          <div class="core media media--wide">
-            <img src="assets/img/playa-santiago.webp" width="1000" height="1250" loading="lazy" decoding="async"
-                 alt="Playa mediterránea con palmeras y paseo marítimo">
-            <span class="media__tag badge badge--lime">5–8 mar 2027</span>
-          </div>
-        </div>
-      </div>
-      <div class="trip-detail__body">
-        <p class="tiny">Mallorca · Illes Balears</p>
-        <h3 class="h2" style="font-size:clamp(1.8rem,3vw,2.6rem)">Mallorca · padel week</h3>
-        <p class="muted">El viaje grande de la temporada: cuatro días, dos clubs y playa. Con tiempo para jugar mucho y no hacer nada en absoluto.</p>
-        <div class="trip-detail__meta">
-          <span><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>5–8 mar 2027</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Todos los niveles · 18 plazas</span>
-          <span><svg class="i" aria-hidden="true"><use href="#i-racket"/></svg>6 partidos</span>
-        </div>
-        <ul class="level__list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>3 noches de hotel junto al mar</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Pistas en dos clubs de la isla</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Actividad libre y cena de despedida</li>
-        </ul>
-        <div class="level__foot">
-          <p class="trip-detail__price"><small>Desde</small>320 € / persona</p>
-          <a class="btn btn--ink" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
-            Reservar plaza
-            <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <div class="note mt-3" data-reveal>
-      <svg class="i" aria-hidden="true"><use href="#i-users"/></svg>
-      <p>El precio incluye pistas, bolas, coordinación y alojamiento en habitación compartida. Transporte aparte: se organizan coches entre los inscritos.</p>
+    <div class="grid grid--3">
+      <article class="reason" data-reveal>
+        <span class="reason__num">01</span>
+        <div class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg></div>
+        <h3>Elige fechas y nivel</h3>
+        <p>Escápada corta, puente o una semana. Da igual si juegas de vez en cuando o compites: adaptamos el grupo.</p>
+      </article>
+      <article class="reason" data-reveal style="--d:1">
+        <span class="reason__num">02</span>
+        <div class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg></div>
+        <h3>Te montamos el plan</h3>
+        <p>Pistas reservadas, entrenador y un alojamiento de la zona según presupuesto. Todo cerrado antes de llegar.</p>
+      </article>
+      <article class="reason" data-reveal style="--d:2">
+        <span class="reason__num">03</span>
+        <div class="icon-box"><svg class="i" aria-hidden="true"><use href="#i-waves"/></svg></div>
+        <h3>Juegas y disfrutas</h3>
+        <p>Mañanas de pista y tardes de Mar Menor. Te damos lo necesario para aprovechar la zona sin buscar nada.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ========================= POLÍTICA / FAQ ========================== -->
-<section class="section" aria-labelledby="politica">
+<!-- ============================== PLANES ============================= -->
+<section class="section section--paper2" id="planes" aria-labelledby="planes-title">
+  <div class="wrap">
+    <header class="head">
+      <div class="head__copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Planes</p>
+        <h2 class="h2" id="planes-title">Tres formas de venir.</h2>
+        <p class="lede">Precios orientativos por persona en habitación doble, con pistas y entrenador incluidos. Ajustamos el plan a tus fechas y a tu grupo.</p>
+      </div>
+      <span class="badge badge--lime" data-reveal style="--d:1">Todo el año</span>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="price-card" data-reveal>
+        <p class="tiny">Fin de semana</p>
+        <h3 class="h3">Escapada corta</h3>
+        <p class="price-card__amount">165 €<small>/ persona</small></p>
+        <ul class="level__list">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2 noches de alojamiento</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>3 entrenamientos en pista</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Bolsa de bienvenida y plano de la zona</li>
+        </ul>
+        <a class="btn btn--ghost" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">Pedir fechas<span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </article>
+
+      <article class="price-card price-card--feature" data-reveal style="--d:1">
+        <p class="tiny" style="color:rgba(244,246,250,.5)">El más pedido</p>
+        <h3 class="h3">Semana de pádel</h3>
+        <p class="price-card__amount">390 €<small>/ persona</small></p>
+        <ul class="level__list">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>5 noches de alojamiento</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>6 entrenamientos + partidos guiados</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Un día de plan fuera de la pista</li>
+        </ul>
+        <a class="btn btn--primary" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">Pedir fechas<span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </article>
+
+      <article class="price-card" data-reveal style="--d:2">
+        <p class="tiny">Puentes y grupos</p>
+        <h3 class="h3">Finde largo</h3>
+        <p class="price-card__amount">240 €<small>/ persona</small></p>
+        <ul class="level__list">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>3 noches de alojamiento</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>4 entrenamientos en pista</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Ruta por la zona con el grupo</li>
+        </ul>
+        <a class="btn btn--ghost" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">Pedir fechas<span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </article>
+    </div>
+
+    <div class="note mt-3" data-reveal>
+      <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>
+      <p>Incluye pistas, bolas, entrenador y alojamiento. El transporte hasta San Javier se organiza aparte; el aeropuerto de Murcia (Corvera) está a 25 minutos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EL ENTORNO ========================== -->
+<section class="section" aria-labelledby="entorno">
+  <div class="wrap">
+    <header class="head">
+      <div class="head__copy" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__dot"></span>El entorno</p>
+        <h2 class="h2" id="entorno">Aquí no solo se juega al pádel.</h2>
+        <p class="lede">San Javier está en el centro del Mar Menor: playa, navegación, gastronomía y ciudades a media hora. La tarde la eliges tú.</p>
+      </div>
+    </header>
+
+    <div class="grid grid--2">
+      <article class="trip" data-reveal>
+        <img src="assets/img/playa-santiago.webp" width="1000" height="1250" loading="lazy" decoding="async" alt="Playa de Santiago de la Ribera con palmeras">
+        <div class="trip__body">
+          <div class="trip__top"><span class="badge badge--lime">A 5 min</span></div>
+          <h3 class="h3">Santiago de la Ribera</h3>
+          <p>La playa del club. Paseo marítimo, agua tranquila y chiringuitos para después de entrenar.</p>
+        </div>
+      </article>
+
+      <article class="trip" data-reveal style="--d:1">
+        <img src="assets/img/mar-menor-boats.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Orilla del Mar Menor con veleros fondeados">
+        <div class="trip__body">
+          <div class="trip__top"><span class="badge badge--lime">A 15 min</span></div>
+          <h3 class="h3">La Manga y el Mar Menor</h3>
+          <p>Vela, kayak, paddle surf o simplemente una cala. El agua más tranquila del Mediterráneo.</p>
+        </div>
+      </article>
+
+      <article class="trip" data-reveal style="--d:2">
+        <img src="assets/img/coast.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Vista aérea de la costa y el puerto">
+        <div class="trip__body">
+          <div class="trip__top"><span class="badge badge--lime">A 30 min</span></div>
+          <h3 class="h3">Cartagena</h3>
+          <p>Teatro romano, puerto y la mejor tapa del sureste. Una tarde de ciudad entre entrenamientos.</p>
+        </div>
+      </article>
+
+      <article class="trip" data-reveal style="--d:3">
+        <img src="assets/img/mar-menor-sunset.webp" width="1400" height="788" loading="lazy" decoding="async" alt="Atardecer sobre el Mar Menor con veleros">
+        <div class="trip__body">
+          <div class="trip__top"><span class="badge badge--lime">Cada tarde</span></div>
+          <h3 class="h3">Atardecer en la salina</h3>
+          <p>Las salinas de San Pedro y el cielo del Mar Menor. El plan que no falla después de jugar.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= EN INGLÉS =========================== -->
+<section class="section section--ink" aria-labelledby="english">
+  <div class="wrap split split--7-5">
+    <div class="stack stack--md" data-reveal>
+      <p class="eyebrow"><span class="eyebrow__dot"></span>In English</p>
+      <h2 class="h2" id="english">Padel, sun and the Mar Menor.</h2>
+      <p class="lede" style="font-family:var(--font-body)">We are a padel academy in San Javier, Murcia. Coming for a few days? We book the courts, match you with a coach for your level and suggest where to stay — you only need to show up and play.</p>
+      <ul class="checklist">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Coaching in English and Spanish</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Courts, balls and coach included</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>25 min from Murcia airport (RMU)</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Accommodation suggestions for every budget</li>
+      </ul>
+      <div class="row">
+        <a class="btn btn--primary" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20padel%20camp%20%28entrenamiento%20%2B%20estancia%29." target="_blank" rel="noopener">
+          Ask about your dates
+          <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="shell shell--dark" data-reveal style="--d:1">
+      <div class="core media media--tall">
+        <img src="assets/img/court-indoor.webp" width="1400" height="999" loading="lazy" decoding="async"
+             alt="Indoor padel court at the club in San Javier">
+        <div class="media__scrim"></div>
+        <div class="media__foot"><span class="badge badge--lime">San Javier · Murcia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONDICIONES ========================= -->
+<section class="section" aria-labelledby="condiciones">
   <div class="wrap split split--5-7 split--top">
     <div class="stack stack--md" data-reveal>
-      <p class="eyebrow"><span class="eyebrow__dot"></span>Antes de reservar</p>
-      <h2 class="h2" id="politica">Letra pequeña, en grande.</h2>
-      <p class="lede">Reservas, cancelaciones y qué pasa si el tiempo no acompaña. Sin sorpresas.</p>
-      <a class="btn btn--ghost" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>Antes de venir</p>
+      <h2 class="h2" id="condiciones">Lo práctico, claro.</h2>
+      <p class="lede">Reservas, cancelaciones y qué pasa si el tiempo no acompaña.</p>
+      <a class="btn btn--ghost" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">
         <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        Preguntar por un viaje
+        Preguntar por WhatsApp
       </a>
     </div>
 
     <div class="acc" data-reveal style="--d:1">
       <div class="acc__item">
-        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v1">¿Cómo se reserva la plaza?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
-        <div class="acc__panel" id="faq-v1" data-open="false"><div class="acc__inner"><p>Por WhatsApp. Se confirma con un pago del 30 % y el resto una semana antes de la salida. Plazas por orden de reserva.</p></div></div>
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v1">¿Cómo se reserva?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-v1" data-open="false"><div class="acc__inner"><p>Por WhatsApp. Confirmamos fechas, nivel y alojamiento, y la plaza se asegura con un pago del 30 %. El resto, una semana antes de llegar.</p></div></div>
       </div>
       <div class="acc__item">
         <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v2">¿Y si cancelo?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
-        <div class="acc__panel" id="faq-v2" data-open="false"><div class="acc__inner"><p>Hasta 21 días antes, devolución completa menos gastos de gestión. Después, depende del alojamiento: te lo contamos antes de reservar.</p></div></div>
+        <div class="acc__panel" id="faq-v2" data-open="false"><div class="acc__inner"><p>Hasta 21 días antes, devolución completa menos gastos de gestión. Después depende del alojamiento: te lo contamos antes de reservar.</p></div></div>
       </div>
       <div class="acc__item">
-        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v3">¿Necesito ir con pareja?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
-        <div class="acc__panel" id="faq-v3" data-open="false"><div class="acc__inner"><p>No. La mayoría viene sola y se organizan parejas allí. Si vienes con alguien, se mantiene siempre que sea posible.</p></div></div>
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v3">¿Tengo que traer material?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-v3" data-open="false"><div class="acc__inner"><p>No. Tenemos palas de iniciación y bolas. Si prefieres jugar con la tuya, tráela: entrenarás con lo que compites.</p></div></div>
       </div>
       <div class="acc__item">
-        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v4">¿Puedo ir con un nivel bajo?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
-        <div class="acc__panel" id="faq-v4" data-open="false"><div class="acc__inner"><p>Sí, salvo que el viaje indique nivel medio. En Mallorca hay pistas para todos los niveles y se agrupa por juego real, no por etiqueta.</p></div></div>
+        <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-v4">¿Vale para cualquier nivel?<span class="acc__sign"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <div class="acc__panel" id="faq-v4" data-open="false"><div class="acc__inner"><p>Sí. Agrupamos por nivel real, no por etiqueta. Si vienes solo, te emparejamos con gente de tu ritmo.</p></div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== GALERÍA ============================ -->
-<section class="section section--paper2" aria-labelledby="galeria-viajes">
-  <div class="wrap">
-    <header class="head">
-      <div class="head__copy" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__dot"></span>Mar Menor</p>
-        <h2 class="h2" id="galeria-viajes">El sitio del que salimos.</h2>
-        <p class="lede">San Javier, La Manga y el Mar Menor: 30 minutos de casa a la pista y el mar al lado.</p>
-      </div>
-    </header>
-    <div class="gallery" data-reveal>
-      <div class="gallery__a"><img src="assets/img/mar-menor-sunset.webp" width="1400" height="788" loading="lazy" decoding="async" alt="Atardecer sobre el Mar Menor con veleros"></div>
-      <div class="gallery__b"><img src="assets/img/playa-santiago.webp" width="1000" height="1250" loading="lazy" decoding="async" alt="Playa de Santiago de la Ribera con palmeras"></div>
-      <div class="gallery__c"><img src="assets/img/mar-menor-boats.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Orilla del Mar Menor con veleros fondeados"></div>
-      <div class="gallery__d"><img src="assets/img/court-indoor.webp" width="1400" height="999" loading="lazy" decoding="async" alt="Pista de pádel del club en San Javier"></div>
     </div>
   </div>
 </section>
@@ -311,16 +338,16 @@
     <div class="cta-band" data-reveal>
       <div class="cta-band__grid">
         <div>
-          <p class="eyebrow"><span class="eyebrow__dot"></span>Próxima salida</p>
-          <h2 class="h2 mt-2">¿Te vienes al siguiente?</h2>
-          <p class="lede">Cuéntanos tu nivel y te decimos qué viaje te encaja mejor.</p>
+          <p class="eyebrow"><span class="eyebrow__dot"></span>Tu escapada</p>
+          <h2 class="h2 mt-2">Dinos cuándo vienes.</h2>
+          <p class="lede">Te respondemos con un plan cerrado: fechas, pistas, entrenador y alojamiento.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20viajes%20de%20p%C3%A1del." target="_blank" rel="noopener">
-            Ver plazas
+          <a class="btn btn--primary btn--lg magnetic" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20venir%20a%20jugar%20unos%20d%C3%ADas%20a%20San%20Javier%20%28p%C3%A1del%20%2B%20estancia%29." target="_blank" rel="noopener">
+            Pedir plan
             <span class="btn__icon"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
-          <a class="btn btn--outline-light btn--lg" href="torneos.html">Torneos del viernes</a>
+          <a class="btn btn--outline-light btn--lg" href="contacto.html">Cómo llegar</a>
         </div>
       </div>
     </div>
@@ -334,15 +361,15 @@
           <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
-          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, mini torneos los viernes y viajes que se recuerdan.</p>
+          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, escuela de menores, mini torneos los viernes y pádel + estancia para quien viene a jugar.</p>
           <div class="footer__cta">
             <a class="btn btn--primary btn--sm" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba%20en%20el%20club%20de%20p%C3%A1del%20de%20San%20Javier." target="_blank" rel="noopener">Reserva tu clase<span class="btn__icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
             <a class="btn btn--outline-light btn--sm" href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -351,7 +378,8 @@
         <div class="footer__col">
           <h3>Academia</h3>
           <div class="footer__links">
-            <a href="clases.html">Clases de pádel</a>
+            <a href="clases.html">Clases de adultos</a>
+            <a href="clases.html#menores">Escuela de menores</a>
             <a href="academia.html">La academia</a>
             <a href="entrenadores.html">Entrenadores</a>
             <a href="horarios.html">Horarios y precios</a>
@@ -362,7 +390,7 @@
           <h3>Experiencias</h3>
           <div class="footer__links">
             <a href="torneos.html">Mini torneos de los viernes</a>
-            <a href="viajes.html">Viajes de pádel</a>
+            <a href="viajes.html">Ven a San Javier</a>
             <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" rel="noopener">Comunidad en Instagram</a>
             <a href="contacto.html">Contacto y ubicación</a>
           </div>

@@ -9,7 +9,7 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
 | --- | --- | --- |
 | Escuela de adultos 1 día | 30 €/mes | `horarios.html`, `clases.html`, home |
 | Escuela de adultos 2 días | 45 €/mes | `horarios.html` |
-| Escuela de menores | 20 €/mes · 370 €/temporada | `horarios.html`, `academia.html` |
+| Escuela de menores | 20 €/mes · 370 €/temporada | `horarios.html`, `clases.html`, `academia.html`, home |
 | Clase particular 1 persona | desde 30 €/h | `clases.html`, home |
 | Clase particular 2 personas | desde 35 €/h | `clases.html` |
 | Bono 4 clases | 112 € / 132 € | `horarios.html` |
@@ -19,6 +19,31 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
 > Los importes de adultos, menores y particulares vienen del sitio anterior; los bonos y
 > el precio del torneo son estimaciones de maqueta y hay que confirmarlos.
 
+## Escuela de menores
+
+- Edades publicadas: **6 a 14 años**, grupos 6–9 y 10–14 (ajustar a los grupos reales).
+- Días: de lunes a viernes por la tarde, 1 o 2 días por semana.
+- Cuota: 20 €/mes o 370 €/temporada (heredado del sitio anterior).
+- Falta confirmar si hay matrícula, descuentos por hermanos y calendario por trimestres.
+- La foto de la sección es `img/menores.jpg` (real del club), recortada a 3:2.
+
+## Ven a San Javier (pádel + estancia)
+
+La página `viajes.html` ya no plantea salidas del club: está enfocada a **recibir
+jugadores** que vienen unos días a San Javier. Faltan por cerrar:
+
+- **Precios** por persona (publicados como orientativos): escapada corta 165 €,
+  semana 390 €, finde largo 240 €. Incluyen pistas, entrenador y alojamiento.
+- **Alojamientos**: no hay acuerdos cerrados todavía. Definir 2–3 opciones por
+  presupuesto (hotel, apartamento, casa) y sus condiciones.
+- **Fechas**: no se publican fechas fijas, se trabaja bajo petición. Confirmar si habrá
+  salidas cerradas en temporada alta.
+- **Transporte**: se indica que se organiza aparte; el texto menciona el aeropuerto de
+  Murcia (Corvera) a 25 minutos. Verificar tiempos reales.
+- **Idiomas**: la sección en inglés asume entrenamiento bilingüe. Confirmar qué
+  entrenadores pueden dar clase en inglés.
+- **Qué incluye/no incluye**: revisar la política real de cancelación y el pago del 30 %.
+
 ## Torneos
 
 - Fechas publicadas: **20 y 27 de noviembre**, **4 de diciembre** (abierto) y
@@ -27,18 +52,11 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
 - Ranking del mes: los cinco nombres y puntos son **de ejemplo**; hay que conectarlo a
   resultados reales o retirarlo.
 
-## Viajes
-
-- **Valencia**: 27–29 nov 2026, 165 €/persona, 16 plazas, nivel medio, 4 partidos.
-- **Sierra Nevada**: 12–14 dic 2026, 195 €/persona, 12 plazas, nivel medio, 3 partidos.
-- **Mallorca**: 5–8 mar 2027, 320 €/persona, 18 plazas, todos los niveles, 6 partidos.
-- Faltan por definir: transporte, alojamientos concretos, política de cancelación real y
-  qué incluye exactamente cada precio.
-
 ## Horarios
 
 - Cuadro semanal de `horarios.html` (17:00–21:00, lunes a sábado) y horario de oficina
   (L–V 16:00–21:00, S 10:00–13:00): ambos son orientativos.
+- La fila de menores (17:00 lunes a viernes) debe cuadrar con los grupos reales.
 - Estado «Actualizado · nov 2026»: cambiar cuando se confirme el cuadro definitivo.
 
 ## Instalaciones y contacto
@@ -56,8 +74,7 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
 ## Área de alumnos
 
 - La pantalla de acceso es una maqueta: no hay backend ni validación. Hay que conectar el
-  sistema de reservas del club (o el proveedor que se elija) y decidir si el login se abre
-  en el mismo dominio o en uno externo.
+  sistema de reservas del club (o el proveedor que se elija).
 
 ## Legal
 
@@ -68,9 +85,11 @@ producción. Los textos legales y de privacidad requieren revisión profesional.
   Ahora mismo la etiqueta de analítica **no** está incluida en el nuevo sitio; la versión
   anterior sí la tenía (`G-X9BEJ5WG8E`).
 
-## Medios
+## Medios y marca
 
-- Todas las fotos de acción, pistas y destinos son de **Pexels** (provisionales).
+- Paleta aplicada con los colores del club: azul `#1D4CAF` y lima `#A9C93A` (los del
+  `tailwind.config` del sitio anterior). Confirmar que son los colores oficiales de marca.
+- Todas las fotos de acción, pistas y entorno son de **Pexels** (provisionales).
 - Los retratos de los entrenadores son fotos reales del club, ya optimizadas. Falta la de
   **Jorge**: la que había en el repositorio era un avatar genérico, así que se ha omitido
   del equipo hasta tener una real.

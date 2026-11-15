@@ -46,6 +46,11 @@ COACHES = [
     ("coach-antonio", "antonio.jpg"),
 ]
 
+# Real club photos from img/ (not Pexels): name, file, aspect, focus, max width
+CLUB = [
+    ("menores", "menores.jpg", (3, 2), 0.45, 1200),
+]
+
 
 def crop_to(img: Image.Image, aspect: tuple[int, int], focus: float) -> Image.Image:
     tw, th = aspect
@@ -105,6 +110,22 @@ def build_coaches() -> None:
         print(f"{dest.name:26s} {img.width}x{img.height}  {dest.stat().st_size // 1024} KB")
 
 
+def build_club() -> None:
+    for name, filename, aspect, focus, max_w in CLUB:
+        src = ROOT / "img" / filename
+        if not src.exists():
+            print(f"!! missing {src}")
+            continue
+        img = Image.open(src).convert("RGB")
+        img = ImageOps.exif_transpose(img)
+        img = crop_to(img, aspect, focus)
+        if img.width > max_w:
+            img = img.resize((max_w, round(max_w * img.height / img.width)), Image.LANCZOS)
+        dest = OUT / f"{name}.webp"
+        save_webp(img, dest, quality=80)
+        print(f"{dest.name:26s} {img.width}x{img.height}  {dest.stat().st_size // 1024} KB")
+
+
 def build_og() -> None:
     src = SRC / "40136712.jpg"
     img = Image.open(src).convert("RGB")
@@ -151,5 +172,6 @@ def build_video() -> None:
 if __name__ == "__main__":
     build_stock()
     build_coaches()
+    build_club()
     build_og()
     build_video()

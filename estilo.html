@@ -7,7 +7,7 @@
   <title>Guía visual · Sistema de diseño del Club de Pádel San Javier</title>
   <meta name="description" content="Biblioteca de componentes del sitio: color, tipografía, botones, tarjetas, formularios y movimiento.">
   <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" content="#0a1e1b">
+  <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Club de Pádel San Javier">
@@ -34,16 +34,32 @@
       <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
       <nav class="nav__links" aria-label="Navegación principal">
-        <a class="nav__link" href="clases.html">Clases</a><div class="nav__drop">
+        <div class="nav__drop" data-drop>
+          <button class="nav__drop-btn" type="button" id="clases-btn" aria-expanded="false" aria-controls="clases-panel">
+            Clases <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="nav__panel" id="clases-panel" data-open="false">
+            <a class="nav__panel-link" href="clases.html#adultos">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
+              <span><strong>Clases de adultos</strong><span>Iniciación, intermedio y competición</span></span>
+            </a><a class="nav__panel-link" href="clases.html#menores">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-ball"/></svg></span>
+              <span><strong>Escuela de menores</strong><span>Desde 6 años, después del cole</span></span>
+            </a><a class="nav__panel-link" href="clases.html#precios">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-target"/></svg></span>
+              <span><strong>Precios y formatos</strong><span>Escuela, particulares y bonos</span></span>
+            </a>
+          </div>
+        </div><div class="nav__drop" data-drop>
           <button class="nav__drop-btn" type="button" id="exp-btn" aria-expanded="false" aria-controls="exp-panel">
             Experiencias <svg class="i " aria-hidden="true" focusable="false"><use href="#i-chevron-down"/></svg>
           </button>
@@ -51,10 +67,9 @@
             <a class="nav__panel-link" href="torneos.html">
               <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-trophy"/></svg></span>
               <span><strong>Mini torneos del viernes</strong><span>Cada viernes, plazas limitadas</span></span>
-            </a>
-            <a class="nav__panel-link" href="viajes.html">
-              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-plane"/></svg></span>
-              <span><strong>Viajes de pádel</strong><span>Fines de semana fuera de casa</span></span>
+            </a><a class="nav__panel-link" href="viajes.html">
+              <span class="nav__panel-icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-waves"/></svg></span>
+              <span><strong>Ven a San Javier</strong><span>Pádel + Mar Menor, con estancia</span></span>
             </a>
           </div>
         </div><a class="nav__link" href="entrenadores.html">Entrenadores</a><a class="nav__link" href="horarios.html">Horarios</a><a class="nav__link" href="academia.html">Academia</a><a class="nav__link" href="contacto.html">Contacto</a>
@@ -73,7 +88,7 @@
   </header>
 <div class="menu" id="menu" data-open="false" aria-hidden="true">
     <nav aria-label="Menú móvil">
-      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="index.html" style="--i:0">Inicio<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:1">Clases<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3">Viajes<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
+      <ul class="menu__list"><li class="menu__item"><a class="menu__link" href="clases.html" style="--i:0">Clases<small>01</small></a></li><li class="menu__item"><a class="menu__link" href="clases.html#menores" style="--i:1">Escuela de menores<small>02</small></a></li><li class="menu__item"><a class="menu__link" href="torneos.html" style="--i:2">Mini torneos<small>03</small></a></li><li class="menu__item"><a class="menu__link" href="viajes.html" style="--i:3">Ven a San Javier<small>04</small></a></li><li class="menu__item"><a class="menu__link" href="entrenadores.html" style="--i:4">Entrenadores<small>05</small></a></li><li class="menu__item"><a class="menu__link" href="horarios.html" style="--i:5">Horarios y precios<small>06</small></a></li><li class="menu__item"><a class="menu__link" href="academia.html" style="--i:6">Academia<small>07</small></a></li><li class="menu__item"><a class="menu__link" href="contacto.html" style="--i:7">Contacto<small>08</small></a></li></ul>
     </nav>
     <div class="menu__foot">
       <a href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -103,18 +118,18 @@
       </div>
     </header>
     <div class="swatches" data-reveal>
-      <div class="swatch"><div class="swatch__chip" style="background:#0a1e1b"></div><div class="swatch__meta"><b>Tinta</b><span>--ink · #0A1E1B</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#123330"></div><div class="swatch__meta"><b>Tinta 2</b><span>--ink-2 · #123330</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#0e4a42"></div><div class="swatch__meta"><b>Verde pista</b><span>--sea · #0E4A42</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#f4f0e7"></div><div class="swatch__meta"><b>Papel</b><span>--paper · #F4F0E7</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#fbf8f1"></div><div class="swatch__meta"><b>Papel 2</b><span>--paper-2 · #FBF8F1</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#d8f14b"></div><div class="swatch__meta"><b>Lima</b><span>--lime · #D8F14B</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#ff6a4d"></div><div class="swatch__meta"><b>Coral</b><span>--coral · #FF6A4D</span></div></div>
-      <div class="swatch"><div class="swatch__chip" style="background:#e9e2d4"></div><div class="swatch__meta"><b>Arena</b><span>--sand · #E9E2D4</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#0f172a"></div><div class="swatch__meta"><b>Tinta</b><span>--ink · #0F172A</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#16213c"></div><div class="swatch__meta"><b>Tinta 2</b><span>--ink-2 · #16213C</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#1d4caf"></div><div class="swatch__meta"><b>Azul club</b><span>--blue · #1D4CAF</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#143b8a"></div><div class="swatch__meta"><b>Azul profundo</b><span>--blue-deep · #143B8A</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#a9c93a"></div><div class="swatch__meta"><b>Lima</b><span>--lime · #A9C93A</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#f4f6fa"></div><div class="swatch__meta"><b>Papel</b><span>--paper · #F4F6FA</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#ffffff"></div><div class="swatch__meta"><b>Blanco</b><span>--paper-2 · #FFFFFF</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#e4e9f2"></div><div class="swatch__meta"><b>Niebla</b><span>--sand · #E4E9F2</span></div></div>
     </div>
     <div class="note mt-3" data-reveal>
       <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>
-      <p>El lima siempre lleva texto tinta. El coral nunca se usa para texto pequeño: solo puntos, badges y detalles decorativos.</p>
+      <p>Azul club para identidad y enlaces; lima solo en el CTA principal y en detalles de acento. El lima siempre lleva texto tinta.</p>
     </div>
   </div>
 </section>
@@ -245,7 +260,7 @@
         <div class="card__body">
           <span class="icon-box icon-box--light"><svg class="i" aria-hidden="true"><use href="#i-trophy"/></svg></span>
           <h3 class="h3">Tarjeta oscura</h3>
-          <p>Para torneos, viajes y bloques de experiencia.</p>
+          <p>Para torneos, escapadas y bloques de experiencia.</p>
         </div>
       </article>
     </div>
@@ -333,15 +348,15 @@
           <a class="brand" href="index.html" aria-label="Club de Pádel San Javier — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>
-          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, mini torneos los viernes y viajes que se recuerdan.</p>
+          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, escuela de menores, mini torneos los viernes y pádel + estancia para quien viene a jugar.</p>
           <div class="footer__cta">
             <a class="btn btn--primary btn--sm" href="https://wa.me/34722193369?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba%20en%20el%20club%20de%20p%C3%A1del%20de%20San%20Javier." target="_blank" rel="noopener">Reserva tu clase<span class="btn__icon"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></a>
             <a class="btn btn--outline-light btn--sm" href="area-alumnos.html"><svg class="i " aria-hidden="true" focusable="false"><use href="#i-lock"/></svg> Área de alumnos</a>
@@ -350,7 +365,8 @@
         <div class="footer__col">
           <h3>Academia</h3>
           <div class="footer__links">
-            <a href="clases.html">Clases de pádel</a>
+            <a href="clases.html">Clases de adultos</a>
+            <a href="clases.html#menores">Escuela de menores</a>
             <a href="academia.html">La academia</a>
             <a href="entrenadores.html">Entrenadores</a>
             <a href="horarios.html">Horarios y precios</a>
@@ -361,7 +377,7 @@
           <h3>Experiencias</h3>
           <div class="footer__links">
             <a href="torneos.html">Mini torneos de los viernes</a>
-            <a href="viajes.html">Viajes de pádel</a>
+            <a href="viajes.html">Ven a San Javier</a>
             <a href="https://www.instagram.com/clubpadelsanjavier/" target="_blank" rel="noopener">Comunidad en Instagram</a>
             <a href="contacto.html">Contacto y ubicación</a>
           </div>

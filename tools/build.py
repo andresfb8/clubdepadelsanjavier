@@ -79,7 +79,7 @@ TOKENS = {
     "%%WA_PARTICULAR%%": wa("Hola, quiero reservar una clase particular."),
     "%%WA_INSCRIPCION%%": wa("Hola, quiero inscribirme en la academia de pádel."),
     "%%WA_TORNEO%%": wa("Hola, quiero apuntarme al mini torneo del viernes."),
-    "%%WA_VIAJE%%": wa("Hola, quiero información sobre los viajes de pádel."),
+    "%%WA_VIAJE%%": wa("Hola, quiero información para venir a jugar unos días a San Javier (pádel + estancia)."),
     "%%WA_MENORES%%": wa("Hola, quiero información sobre la escuela de menores."),
     "%%WA_CAMP%%": wa("Hola, quiero información sobre el padel camp (entrenamiento + estancia)."),
     "%%WA_ALUMNO%%": wa("Hola, soy alumno del club y necesito ayuda con el área de alumnos."),
@@ -143,49 +143,72 @@ def sprite() -> str:
 
 # --------------------------------------------------------------------------- nav
 NAV_MAIN = [
-    ("clases.html", "Clases", "clases"),
-    ("__exp__", "Experiencias", "exp"),
+    ("drop:clases", "Clases", "clases"),
+    ("drop:exp", "Experiencias", "exp"),
     ("entrenadores.html", "Entrenadores", "entrenadores"),
     ("horarios.html", "Horarios", "horarios"),
     ("academia.html", "Academia", "academia"),
     ("contacto.html", "Contacto", "contacto"),
 ]
 
+DROPDOWNS = {
+    "clases": {
+        "active": {"clases"},
+        "items": [
+            ("clases.html#adultos", "Clases de adultos", "Iniciación, intermedio y competición", "users"),
+            ("clases.html#menores", "Escuela de menores", "Desde 6 años, después del cole", "ball"),
+            ("clases.html#precios", "Precios y formatos", "Escuela, particulares y bonos", "target"),
+        ],
+    },
+    "exp": {
+        "active": {"torneos", "viajes"},
+        "items": [
+            ("torneos.html", "Mini torneos del viernes", "Cada viernes, plazas limitadas", "trophy"),
+            ("viajes.html", "Ven a San Javier", "Pádel + Mar Menor, con estancia", "waves"),
+        ],
+    },
+}
+
 
 def brand(href: str = "index.html") -> str:
     return f"""<a class="brand" href="{href}" aria-label="{SITE} — inicio">
       <span class="brand__mark">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0a1e1b" stroke-width="1.5"/>
-          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0a1e1b" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#0a1e1b"/>
+          <circle cx="12" cy="12" r="8.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+          <path d="M5.6 8.4c3.2.6 5.6 3 6.3 6.1.4 1.9.2 3.7-.6 5.2" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18.4 7.6c-3.2.6-5.6 3-6.3 6.1" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="1.6" fill="#0f172a"/>
         </svg>
       </span>
       <span class="brand__text"><strong>Club de Pádel</strong><span>San Javier · Mar Menor</span></span>
     </a>"""
 
 
+def nav_dropdown(key: str, label: str, active: str) -> str:
+    spec = DROPDOWNS[key]
+    current = ' aria-current="page"' if active in spec["active"] else ""
+    items = "".join(
+        f"""<a class="nav__panel-link" href="{href}">
+              <span class="nav__panel-icon">{icon(ic)}</span>
+              <span><strong>{title}</strong><span>{desc}</span></span>
+            </a>"""
+        for href, title, desc, ic in spec["items"]
+    )
+    return f"""<div class="nav__drop" data-drop>
+          <button class="nav__drop-btn" type="button" id="{key}-btn" aria-expanded="false" aria-controls="{key}-panel"{current}>
+            {label} {icon("chevron-down")}
+          </button>
+          <div class="nav__panel" id="{key}-panel" data-open="false">
+            {items}
+          </div>
+        </div>"""
+
+
 def nav(active: str) -> str:
     links = []
     for href, label, key in NAV_MAIN:
-        if key == "exp":
-            current = ' aria-current="page"' if active in {"torneos", "viajes"} else ""
-            links.append(f"""<div class="nav__drop">
-          <button class="nav__drop-btn" type="button" id="exp-btn" aria-expanded="false" aria-controls="exp-panel"{current}>
-            {label} {icon("chevron-down")}
-          </button>
-          <div class="nav__panel" id="exp-panel" data-open="false">
-            <a class="nav__panel-link" href="torneos.html">
-              <span class="nav__panel-icon">{icon("trophy")}</span>
-              <span><strong>Mini torneos del viernes</strong><span>Cada viernes, plazas limitadas</span></span>
-            </a>
-            <a class="nav__panel-link" href="viajes.html">
-              <span class="nav__panel-icon">{icon("plane")}</span>
-              <span><strong>Viajes de pádel</strong><span>Fines de semana fuera de casa</span></span>
-            </a>
-          </div>
-        </div>""")
+        if href.startswith("drop:"):
+            links.append(nav_dropdown(href.split(":", 1)[1], label, active))
         else:
             current = ' aria-current="page"' if active == key else ""
             links.append(f'<a class="nav__link" href="{href}"{current}>{label}</a>')
@@ -224,10 +247,10 @@ def nav_minimal() -> str:
 
 def menu(active: str) -> str:
     items = [
-        ("index.html", "Inicio", "inicio"),
         ("clases.html", "Clases", "clases"),
+        ("clases.html#menores", "Escuela de menores", "menores"),
         ("torneos.html", "Mini torneos", "torneos"),
-        ("viajes.html", "Viajes", "viajes"),
+        ("viajes.html", "Ven a San Javier", "viajes"),
         ("entrenadores.html", "Entrenadores", "entrenadores"),
         ("horarios.html", "Horarios y precios", "horarios"),
         ("academia.html", "Academia", "academia"),
@@ -267,7 +290,7 @@ def footer(bare: bool = False) -> str:
       <div class="footer__top">
         <div class="footer__brand">
           {brand()}
-          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, mini torneos los viernes y viajes que se recuerdan.</p>
+          <p>Academia de pádel en San Javier, Mar Menor. Clases para todos los niveles, escuela de menores, mini torneos los viernes y pádel + estancia para quien viene a jugar.</p>
           <div class="footer__cta">
             <a class="btn btn--primary btn--sm" href="%%WA_CLASE%%" target="_blank" rel="noopener">Reserva tu clase<span class="btn__icon">{icon("arrow")}</span></a>
             <a class="btn btn--outline-light btn--sm" href="area-alumnos.html">{icon("lock")} Área de alumnos</a>
@@ -276,7 +299,8 @@ def footer(bare: bool = False) -> str:
         <div class="footer__col">
           <h3>Academia</h3>
           <div class="footer__links">
-            <a href="clases.html">Clases de pádel</a>
+            <a href="clases.html">Clases de adultos</a>
+            <a href="clases.html#menores">Escuela de menores</a>
             <a href="academia.html">La academia</a>
             <a href="entrenadores.html">Entrenadores</a>
             <a href="horarios.html">Horarios y precios</a>
@@ -287,7 +311,7 @@ def footer(bare: bool = False) -> str:
           <h3>Experiencias</h3>
           <div class="footer__links">
             <a href="torneos.html">Mini torneos de los viernes</a>
-            <a href="viajes.html">Viajes de pádel</a>
+            <a href="viajes.html">Ven a San Javier</a>
             <a href="%%IG%%" target="_blank" rel="noopener">Comunidad en Instagram</a>
             <a href="contacto.html">Contacto y ubicación</a>
           </div>
@@ -349,7 +373,7 @@ def head(
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">{robots}
-  <meta name="theme-color" content="#0a1e1b">
+  <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{SITE}">
@@ -398,8 +422,8 @@ PAGES = [
     {
         "file": "viajes.html",
         "nav": "viajes",
-        "title": "Viajes de pádel · San Javier y Mar Menor",
-        "desc": "Viajes de pádel desde San Javier: destinos, fechas, niveles y qué incluye. Fines de semana de pádel y comunidad en el Mar Menor.",
+        "title": "Ven a jugar a San Javier · Pádel y Mar Menor",
+        "desc": "Escapadas de pádel en San Javier: entrenamiento, alojamiento y Mar Menor. Planes de fin de semana a una semana para jugadores de todos los niveles.",
     },
     {
         "file": "academia.html",
