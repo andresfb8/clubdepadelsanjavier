@@ -335,10 +335,12 @@ def head(
     body_class: str = "",
     jsonld: str = "",
     canonical: str = "",
+    noindex: bool = False,
 ) -> str:
     schema = f'\n  <script type="application/ld+json">{jsonld}</script>' if jsonld else ""
     link = f'\n  <link rel="canonical" href="{canonical}">' if canonical else ""
     ogurl = f'\n  <meta property="og:url" content="{canonical}">' if canonical else ""
+    robots = '\n  <meta name="robots" content="noindex, follow">' if noindex else ""
     return f"""<!DOCTYPE html>
 <html lang="es" class="no-js">
 <head>
@@ -346,7 +348,7 @@ def head(
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{html.escape(title)}</title>
-  <meta name="description" content="{html.escape(description)}">
+  <meta name="description" content="{html.escape(description)}">{robots}
   <meta name="theme-color" content="#0a1e1b">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -425,6 +427,14 @@ PAGES = [
         "jsonld": LOCAL_JSONLD,
     },
     {
+        "file": "estilo.html",
+        "nav": "estilo",
+        "title": "Guía visual · Sistema de diseño del Club de Pádel San Javier",
+        "desc": "Biblioteca de componentes del sitio: color, tipografía, botones, tarjetas, formularios y movimiento.",
+        "body_class": "page-guia",
+        "noindex": True,
+    },
+    {
         "file": "legal.html",
         "nav": "legal",
         "title": "Aviso legal y privacidad · Club de Pádel San Javier",
@@ -459,6 +469,7 @@ def build_page(spec: dict) -> str:
             spec.get("body_class", ""),
             spec.get("jsonld", ""),
             canonical,
+            spec.get("noindex", False),
         )
     ]
     chunks.append(sprite())
@@ -486,7 +497,7 @@ def build_extras() -> None:
     """sitemap.xml + robots.txt pointing at SITE_URL."""
     urls = []
     for spec in PAGES:
-        if spec["nav"] in {"alumnos", "legal"}:
+        if spec["nav"] in {"alumnos", "legal", "estilo"}:
             continue
         loc = f"{SITE_URL}/" if spec["file"] == "index.html" else f"{SITE_URL}/{spec['file']}"
         priority = "1.0" if spec["file"] == "index.html" else "0.8"
@@ -501,7 +512,7 @@ def build_extras() -> None:
         + "\n</urlset>\n"
     )
     (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
-    robots = f"User-agent: *\nAllow: /\nDisallow: /area-alumnos.html\n\nSitemap: {SITE_URL}/sitemap.xml\n"
+    robots = f"User-agent: *\nAllow: /\nDisallow: /area-alumnos.html\nDisallow: /estilo.html\n\nSitemap: {SITE_URL}/sitemap.xml\n"
     (ROOT / "robots.txt").write_text(robots, encoding="utf-8")
 
 

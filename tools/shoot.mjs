@@ -118,6 +118,8 @@ async function main() {
     const cdp = await connect(target.webSocketDebuggerUrl);
 
     await cdp.send("Page.enable");
+    await cdp.send("Network.enable");
+    await cdp.send("Network.setCacheDisabled", { cacheDisabled: true });
     await cdp.send("Runtime.enable");
 
     for (const page of pages) {

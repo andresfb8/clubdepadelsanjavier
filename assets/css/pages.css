@@ -858,3 +858,23 @@
   backdrop-filter: blur(20px);
 }
 
+
+/* ==========================================================================
+   Style guide page
+   ========================================================================== */
+.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 900px) { .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.swatch {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--line-soft);
+  background: var(--paper-2);
+}
+.swatch__chip { height: 92px; box-shadow: inset 0 0 0 1px rgba(10, 30, 27, 0.12); }
+.swatch__meta { padding: 12px 14px; }
+.swatch__meta b { display: block; font-size: 0.84rem; font-weight: 600; }
+.swatch__meta span { font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.specimen { display: flex; flex-direction: column; gap: 1.4rem; }
+.specimen__row { display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem; align-items: baseline; padding-block: 0.8rem; border-top: 1px solid var(--line-soft); }
+.specimen__row:last-child { border-bottom: 1px solid var(--line-soft); }
+.specimen__row small { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-2); }

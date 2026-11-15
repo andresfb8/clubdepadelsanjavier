@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /area-alumnos.html
+Disallow: /estilo.html
 
 Sitemap: https://clubdepadelsanjavier.netlify.app/sitemap.xml

@@ -32,6 +32,7 @@ Rama de trabajo: `deepseek`.
 | `horarios.html` | Horario semanal, cuotas, particulares y bonos |
 | `contacto.html` | Formulario (abre WhatsApp), datos, mapas y FAQ |
 | `area-alumnos.html` | Acceso privado (maqueta de login, sin backend) |
+| `estilo.html` | Guía visual interna: color, tipografía, botones, tarjetas, formularios y movimiento (no indexada) |
 | `legal.html` | Aviso legal, privacidad y cookies (texto base) |
 
 `404` no está personalizado: Netlify sirve el suyo por defecto.
@@ -53,7 +54,8 @@ assets/
 src/pages/*.html                   ← cuerpos de página (fuente editable)
 tools/build.py                     ← generador de HTML + sitemap/robots
 tools/media.py                     ← optimización de imágenes y vídeo
-tools/shoot.mjs, tools/inspect.mjs ← capturas e inspección con Chrome headless (QA)
+tools/check.py                     ← QA de enlaces, assets y metadatos
+tools/shoot.mjs, tools/inspect.mjs ← capturas e inspección con Chrome headless
 netlify/functions/reviews.js       ← función heredada de reseñas de Google
 img/                               ← fotos originales del club (fuente)
 ```
@@ -66,11 +68,17 @@ img/                               ← fotos originales del club (fuente)
 2. Regenera el HTML:
 
    ```bash
-   python tools/build.py            # todas las páginas + sitemap + robots
+   python tools/build.py              # todas las páginas + sitemap + robots
    python tools/build.py clases.html  # solo una
    ```
 
-3. Previsualiza:
+3. Comprueba enlaces y metadatos:
+
+   ```bash
+   python tools/check.py
+   ```
+
+4. Previsualiza:
 
    ```bash
    python -m http.server 8137
@@ -107,8 +115,8 @@ Actualiza `SITE_URL` en `tools/build.py` cuando haya dominio definitivo (afecta 
   atribución obligatoria). Son imágenes provisionales hasta tener material propio.
 - Retratos de entrenadores: **fotos reales del club** (`img/`), recortadas en 4:5 y
   convertidas a WebP; se muestran en blanco y negro y recuperan color al pasar el ratón.
-- El vídeo del hero de comunidad es un clip de archivo de Pexels, regradado y
-  recomprimido a 1280×720 (≈2 MB) y servido desde `assets/video/`.
+- El vídeo de comunidad es un clip de archivo de Pexels, regradado y recomprimido a
+  1280×720 (≈2 MB) y servido desde `assets/video/`.
 
 Para regenerar los medios (requiere las fuentes en `.tmp/shortlist`, que no se
 versionan):
@@ -124,7 +132,7 @@ python tools/media.py
 - HTML semántico, un solo `h1` por página, `skip link`, foco visible y menú con
   `aria-expanded` + trampa de foco.
 - Contraste alto en texto y botones; el lima solo se usa con texto tinta.
-- `prefers-reduced-motion` desactiva reveals, parallax y bucle de marquesina.
+- `prefers-reduced-motion` desactiva reveals y la marquesina.
 - Imágenes en WebP con `width`/`height`, `loading="lazy"` salvo la principal.
 - Animaciones solo con `transform`/`opacity`; `backdrop-filter` únicamente en nav y menú.
 - Sin dependencias JS. Solo se carga Google Fonts (dos familias).
@@ -137,5 +145,7 @@ python tools/media.py
 - El login del área de alumnos es visual: falta conectar el sistema de reservas.
 - Los datos marcados como provisionales están listados en
   [`docs/CONTENIDO-PENDIENTE.md`](docs/CONTENIDO-PENDIENTE.md).
+- Sistema de diseño documentado en [`docs/GUIA-DE-ESTILO.md`](docs/GUIA-DE-ESTILO.md) y
+  navegable en [`estilo.html`](estilo.html).
 - La versión anterior del sitio sigue disponible en el historial:
   `git show main:index.html`.
