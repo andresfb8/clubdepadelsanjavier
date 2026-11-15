@@ -63,7 +63,9 @@
 .cta-band .btn--primary,
 .page-hero--ink .btn--primary,
 .footer .btn--primary,
-.page-alumnos .btn--primary {
+.page-alumnos .btn--primary,
+.price-card--feature .btn--primary,
+.card--ink .btn--primary {
   --btn-bg: var(--lime);
   --btn-fg: var(--ink);
   box-shadow:
@@ -76,13 +78,17 @@
 .cta-band .btn--primary .btn__icon,
 .page-hero--ink .btn--primary .btn__icon,
 .footer .btn--primary .btn__icon,
-.page-alumnos .btn--primary .btn__icon { background: rgba(15, 23, 42, 0.12); }
+.page-alumnos .btn--primary .btn__icon,
+.price-card--feature .btn--primary .btn__icon,
+.card--ink .btn--primary .btn__icon { background: rgba(15, 23, 42, 0.12); }
 .section--ink .btn--primary:hover,
 .tour .btn--primary:hover,
 .cta-band .btn--primary:hover,
 .page-hero--ink .btn--primary:hover,
 .footer .btn--primary:hover,
-.page-alumnos .btn--primary:hover { background: var(--lime-deep); }
+.page-alumnos .btn--primary:hover,
+.price-card--feature .btn--primary:hover,
+.card--ink .btn--primary:hover { background: var(--lime-deep); }
 
 .btn--ink {
   --btn-bg: var(--ink);
