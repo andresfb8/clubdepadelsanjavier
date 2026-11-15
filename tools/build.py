@@ -9,6 +9,7 @@ Output: <page>.html at the repository root.
 """
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 from pathlib import Path
@@ -29,6 +30,14 @@ YEAR = "2026"
 
 def wa(text: str) -> str:
     return f"https://wa.me/{PHONE_RAW}?text={quote(text)}"
+
+
+def asset(path: str) -> str:
+    """Cache-busting URL: appends a short content hash so a CSS/JS change is
+    picked up by browsers without a manual hard refresh."""
+    file = ROOT / path
+    digest = hashlib.md5(file.read_bytes()).hexdigest()[:8] if file.exists() else "0"
+    return f"{path}?v={digest}"
 
 
 LOCAL_JSONLD = json.dumps(
@@ -374,7 +383,7 @@ def head(
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">{robots}
   <meta name="theme-color" content="#0f172a">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{asset('assets/favicon.svg')}" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{SITE}">
   <meta property="og:locale" content="es_ES">
@@ -385,15 +394,15 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages.css">{link}{ogurl}{schema}
+  <link rel="stylesheet" href="{asset('assets/css/site.css')}">
+  <link rel="stylesheet" href="{asset('assets/css/components.css')}">
+  <link rel="stylesheet" href="{asset('assets/css/pages.css')}">{link}{ogurl}{schema}
 </head>
 <body class="{body_class}">"""
 
 
 def scripts() -> str:
-    return """  <script src="assets/js/site.js" defer></script>
+    return f"""  <script src="{asset('assets/js/site.js')}" defer></script>
 </body>
 </html>"""
 
