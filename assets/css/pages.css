@@ -101,7 +101,7 @@
   transform: translateY(-4px);
   box-shadow: inset 0 0 0 1px var(--line), 0 30px 60px -46px rgba(15, 23, 42, 0.5);
 }
-.reason:hover .icon-box { background: var(--lime); }
+.reason:hover .icon-box { background: rgba(29, 76, 175, 0.12); }
 .reason__num {
   font-family: var(--font-display);
   font-size: 0.72rem;
@@ -195,7 +195,7 @@
   max-width: 720px;
   max-height: 720px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(169, 201, 58, 0.16), rgba(169, 201, 58, 0) 65%);
+  background: radial-gradient(circle, rgba(29, 76, 175, 0.24), rgba(29, 76, 175, 0) 65%);
   pointer-events: none;
 }
 .tour__grid {
@@ -237,7 +237,7 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: rgba(244, 246, 250, 0.6);
   margin-bottom: 0.5rem;
 }
 .tour__month { font-size: 0.44em; font-weight: 400; letter-spacing: 0.02em; color: rgba(244, 246, 250, 0.55); }
@@ -272,11 +272,11 @@
   color: rgba(244, 246, 250, 0.72);
 }
 .tour__dates b { font-family: var(--font-display); font-weight: 560; font-size: 0.98rem; color: var(--paper); letter-spacing: -0.01em; }
-.tour__dates em { font-style: normal; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lime); }
+.tour__dates em { font-style: normal; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244, 246, 250, 0.6); }
 
 .tour__list { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1.6rem; }
 .tour__list li { display: flex; gap: 0.6rem; font-size: 0.9rem; color: rgba(244, 246, 250, 0.7); align-items: flex-start; }
-.tour__list .i { color: var(--lime); width: 15px; height: 15px; margin-top: 0.28em; }
+.tour__list .i { color: var(--paper); width: 15px; height: 15px; margin-top: 0.28em; }
 
 /* -------------------------------- trips ---------------------------------- */
 .trip {
@@ -325,7 +325,7 @@
 .trip p { font-size: 0.88rem; color: rgba(244, 246, 250, 0.75); }
 .trip__row { display: flex; flex-wrap: wrap; gap: 0.9rem; font-size: 0.78rem; color: rgba(244, 246, 250, 0.72); }
 .trip__row span { display: inline-flex; align-items: center; gap: 0.35rem; }
-.trip__row .i { width: 14px; height: 14px; color: var(--lime); }
+.trip__row .i { width: 14px; height: 14px; color: var(--paper); }
 
 /* -------------------------------- team ----------------------------------- */
 .team-card { position: relative; }
@@ -389,13 +389,13 @@
   display: grid;
   place-items: center;
   background: var(--ink);
-  color: var(--lime);
+  color: var(--paper);
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
-.quote__author .avatar { color: var(--lime); font-size: 0.8rem; }
+.quote__author .avatar { color: var(--paper); font-size: 0.8rem; }
 .quote__author strong { display: block; font-size: 0.85rem; font-weight: 600; }
 .quote__author span { font-size: 0.72rem; color: var(--muted-2); }
 
@@ -469,7 +469,7 @@
   max-width: 620px;
   max-height: 620px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(169, 201, 58, 0.22), transparent 62%);
+  background: radial-gradient(circle, rgba(29, 76, 175, 0.28), transparent 62%);
   z-index: -1;
 }
 .cta-band__grid {
@@ -513,7 +513,7 @@
   transition: background 0.4s, padding-inline 0.4s var(--ease);
 }
 .cal-row:last-child { border-bottom: 1px solid var(--line); }
-.cal-row:hover { background: rgba(169, 201, 58, 0.12); }
+.cal-row:hover { background: rgba(29, 76, 175, 0.06); }
 .cal-row__date { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; }
 .cal-row__date small { display: block; font-family: var(--font-body); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 0.15rem; }
 .cal-row__title { font-weight: 600; }
@@ -537,7 +537,7 @@
 .checklist li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.94rem; color: var(--muted); }
 .checklist .i { color: var(--blue-deep); width: 16px; height: 16px; margin-top: 0.25em; }
 .section--ink .checklist li { color: rgba(244, 246, 250, 0.72); }
-.section--ink .checklist .i { color: var(--lime); }
+.section--ink .checklist .i { color: var(--paper); }
 
 /* ------------------------------ price card -------------------------------- */
 .price-card {
@@ -561,7 +561,7 @@
 .price-card--feature .price-card__amount small { color: rgba(244, 246, 250, 0.5); }
 .price-card--feature .level__list li { color: rgba(244, 246, 250, 0.72); }
 .price-card--feature .level__list { color: rgba(244, 246, 250, 0.7); }
-.price-card--feature .level__list .i { color: var(--lime); }
+.price-card--feature .level__list .i { color: var(--paper); }
 .price-card__amount {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 3.4vw, 3rem);
@@ -585,7 +585,7 @@
   margin-top: 0.9rem;
   padding: 0.8rem 1rem;
   border-radius: 14px;
-  background: rgba(169, 201, 58, 0.22);
+  background: #e9eff9;
   font-size: 0.86rem;
   color: var(--ink);
 }
@@ -602,7 +602,8 @@
   box-shadow: inset 0 0 0 1px var(--line-soft);
   transition: background 0.45s, box-shadow 0.45s, transform 0.45s var(--ease);
 }
-.cta-link:hover { background: var(--lime); box-shadow: none; transform: translateY(-2px); }
+.cta-link:hover { background: var(--blue); color: #fff; box-shadow: none; transform: translateY(-2px); }
+.cta-link:hover small { color: rgba(255, 255, 255, 0.78); }
 .cta-link strong { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; letter-spacing: -0.015em; }
 .cta-link small { display: block; font-family: var(--font-body); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.02em; }
 .cta-link .i { width: 18px; height: 18px; }
@@ -635,7 +636,7 @@
   max-height: 900px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(169, 201, 58, 0.18), transparent 60%);
+  background: radial-gradient(circle, rgba(29, 76, 175, 0.3), transparent 60%);
   pointer-events: none;
 }
 .alumnos__card > .badge { align-self: flex-start; }
@@ -669,7 +670,7 @@
 }
 .alumnos__card .field input:focus {
   background: rgba(244, 246, 250, 0.14);
-  box-shadow: inset 0 0 0 1px var(--lime), 0 0 0 4px rgba(169, 201, 58, 0.18);
+  box-shadow: inset 0 0 0 1px var(--blue), 0 0 0 4px rgba(29, 76, 175, 0.18);
 }
 .alumnos__help { font-size: 0.8rem; color: rgba(244, 246, 250, 0.5); text-align: center; }
 .alumnos__help a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
@@ -738,7 +739,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(60% 90% at 85% 10%, rgba(169, 201, 58, 0.12), transparent 70%),
+    radial-gradient(60% 90% at 85% 10%, rgba(29, 76, 175, 0.38), transparent 70%),
     radial-gradient(50% 70% at 10% 100%, rgba(20, 59, 138, 0.5), transparent 70%);
   pointer-events: none;
 }
@@ -830,14 +831,14 @@
   align-items: flex-start;
   padding: 1rem 1.15rem;
   border-radius: 16px;
-  background: rgba(169, 201, 58, 0.16);
+  background: #e9eff9;
   box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
   font-size: 0.86rem;
   color: var(--ink);
 }
 .note .i { color: var(--blue-deep); margin-top: 0.15em; }
-.section--ink .note { background: rgba(169, 201, 58, 0.12); color: rgba(244, 246, 250, 0.85); }
-.section--ink .note .i { color: var(--lime); }
+.section--ink .note { background: rgba(244, 246, 250, 0.08); color: rgba(244, 246, 250, 0.85); }
+.section--ink .note .i { color: var(--paper); }
 
 /* ------------------------------ big display ------------------------------ */
 .display-sm {

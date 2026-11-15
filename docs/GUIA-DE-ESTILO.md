@@ -1,14 +1,15 @@
 # Guía de estilo — Club de Pádel San Javier
 
-Sistema de diseño del sitio, alineado con los colores del club (azul y lima) y con una
-base clara de aire deportivo. Todo vive en `assets/css/site.css` (tokens, tipografía,
-layout, navegación) y `assets/css/components.css` (componentes).
+Sistema de diseño del sitio, alineado con los colores del club y con una base clara de
+aire deportivo. Todo vive en `assets/css/site.css` (tokens, tipografía, layout,
+navegación) y `assets/css/components.css` (componentes).
 
 ## Concepto
 
 Deporte moderno, limpio y con energía. Fondo claro y frío (blanco y gris azulado), tinta
-azul noche, **azul club** como color de identidad y acción, y **lima** como acento
-deportivo reservado. Sin degradados de colores, sin sombras duras, sin estridencias.
+azul noche y **azul club** `#1D4CAF` como color de identidad y de acción. La interfaz es
+azul, blanca y tinta; el **lima** `#A9C93A` queda como sello de marca (logo, sellos y
+badges), nunca en botones ni enlaces.
 
 ## Color
 
@@ -18,21 +19,22 @@ deportivo reservado. Sin degradados de colores, sin sombras duras, sin estridenc
 | `--paper-2` | `#FFFFFF` | Tarjetas y superficies |
 | `--ink` | `#0F172A` | Texto principal y secciones oscuras |
 | `--ink-2` | `#16213C` | Superficie oscura elevada |
-| `--blue` | `#1D4CAF` | **Azul club**: CTA principal sobre claro, enlaces y puntos |
-| `--blue-deep` | `#143B8A` | Hover del azul, datos y cifras |
-| `--lime` | `#A9C93A` | **Lima club**: CTA sobre fondo oscuro, badges y acentos |
-| `--lime-deep` | `#94B22C` | Hover del lima |
+| `--blue` | `#1D4CAF` | **Azul club**: CTA principal, enlaces, focos y estados |
+| `--blue-deep` | `#143B8A` | Hover del azul y datos |
+| `--lime` | `#A9C93A` | **Lima club**: solo relleno de badges, marca y sello |
+| `--lime-deep` | `#94B22C` | Hover del lima (uso residual) |
 | `--sand` | `#E4E9F2` | Placeholder de imagen, superficies neutras |
 | `--muted` | `rgba(15,23,42,.62)` | Texto secundario |
 | `--line` | `rgba(15,23,42,.14)` | Hairline estándar |
 
 ### Reglas de uso
 
-- **Un CTA principal por pantalla.** Sobre fondo claro es azul; sobre fondo oscuro (tour,
-  CTA band, footer, área de alumnos) pasa automáticamente a lima con texto tinta.
-- El lima **nunca** lleva texto blanco: siempre tinta azul noche (contraste > 8:1).
-- El azul se usa también para enlaces, iconos de check y el punto de las etiquetas.
-- El coral desaparece: ya no forma parte de la paleta.
+- **Un CTA principal por pantalla.** Es azul sobre fondo claro y **blanco con texto
+  tinta** sobre fondo oscuro (tour, CTA band, footer, área de alumnos, tarjetas
+  destacadas). Nunca lima.
+- El lima no se usa en botones, enlaces, iconos de interfaz ni estados de foco: solo en
+  el relleno de badges, la marca del nav y el sello del hero.
+- El azul cubre también enlaces, iconos de check, focos y el punto de las etiquetas.
 
 ## Tipografía
 
@@ -60,11 +62,12 @@ deportivo reservado. Sin degradados de colores, sin sombras duras, sin estridenc
   contenido dentro con radio concéntrico. Aplica a imágenes, mapas y vídeo.
 - **Botones (`.btn`)**: píldora, icono en círculo anidado a la derecha que se desplaza
   `2px/-2px` en hover; `active: scale(.985)`. Variantes: `--primary` (azul en claro,
-  lima en oscuro), `--ink`, `--ghost`, `--light`, `--outline-light`, `--sm`, `--lg`.
+  blanco en oscuro), `--ink`, `--ghost`, `--light`, `--outline-light`, `--sm`, `--lg`.
 - **Eyebrow**: píldora con punto azul, versalitas y `letter-spacing: .2em`.
 - **Tarjetas**: `.card`, `.level`, `.reason`, `.price-card`, `.quote`, `.team-card`.
 - **Raíl horizontal**: `.rail` con snap, flechas que se desactivan en los extremos.
-- **Acordeón**: botón con icono `+` que rota 45°; panel con `grid-template-rows 0fr→1fr`.
+- **Acordeón**: botón con icono `+` que rota 45° y se tiñe de azul; panel con
+  `grid-template-rows 0fr→1fr`.
 - **Menús desplegables**: `Clases` y `Experiencias` comparten el mismo componente
   (`.nav__drop` + `.nav__panel`), con apertura por teclado, hover y Esc.
 
@@ -95,8 +98,8 @@ Nada de librerías de iconos.
 
 ## Accesibilidad
 
-- Contraste mínimo AA en texto y botones; lima y azul siempre con el texto adecuado.
-- Foco visible de 2 px (tinta sobre claro, lima sobre oscuro).
+- Contraste mínimo AA en texto y botones; blanco sobre azul (7,4:1) y tinta sobre blanco.
+- Foco visible de 2 px (azul sobre claro, blanco sobre oscuro).
 - Objetivos táctiles ≥ 44 px; barra móvil fija con Reservar y Alumnos.
 - Texto alternativo descriptivo en todas las imágenes; iconos decorativos con
   `aria-hidden`.

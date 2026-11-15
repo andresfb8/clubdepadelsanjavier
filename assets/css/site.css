@@ -111,7 +111,7 @@ ol { list-style: none; padding: 0; }
 .section--ink :focus-visible,
 .footer :focus-visible,
 .menu :focus-visible {
-  outline-color: var(--lime);
+  outline-color: #ffffff;
 }
 
 /* ------------------------------ typography ------------------------------ */
@@ -479,7 +479,7 @@ em { font-style: normal; }
   display: grid;
   place-items: center;
   background: var(--ink);
-  color: var(--lime);
+  color: var(--paper);
 }
 .nav__panel-link strong {
   display: block;
@@ -576,7 +576,7 @@ em { font-style: normal; }
   text-transform: uppercase;
   color: rgba(244, 246, 250, 0.45);
 }
-.menu__link:hover { color: var(--lime); }
+.menu__link:hover { color: #fff; }
 
 .menu__foot {
   margin-top: auto;
@@ -591,7 +591,7 @@ em { font-style: normal; }
 }
 .menu[data-open="true"] .menu__foot { opacity: 1; }
 .menu__foot a { font-size: 0.9rem; color: rgba(244, 246, 250, 0.72); }
-.menu__foot a:hover { color: var(--lime); }
+.menu__foot a:hover { color: #fff; }
 
 body.is-locked { overflow: hidden; }
 
@@ -802,7 +802,7 @@ body.is-locked { overflow: hidden; }
   line-height: 1.45;
   transition: color 0.3s;
 }
-.footer__links a:hover { color: var(--lime); }
+.footer__links a:hover { color: #fff; }
 
 .footer__cta {
   display: flex;
@@ -835,7 +835,7 @@ body.is-locked { overflow: hidden; }
   color: rgba(244, 246, 250, 0.45);
 }
 .footer__bottom a { transition: color 0.3s; }
-.footer__bottom a:hover { color: var(--lime); }
+.footer__bottom a:hover { color: #fff; }
 .footer__legal { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 
 /* ------------------------- floating contact ----------------------------- */
@@ -989,4 +989,9 @@ body.is-locked .nav__inner {
 body.is-locked .brand__text strong { color: var(--paper); }
 body.is-locked .brand__text span { color: rgba(244, 246, 250, 0.55); }
 body.is-locked .brand__mark { box-shadow: none; }
-body.is-locked .burger { background: var(--lime); color: var(--ink); }
+body.is-locked .burger { background: #fff; color: var(--ink); }
+
+/* Buttons inside vertical stacks keep their natural width */
+.stack > .btn,
+.stack > .link-arrow,
+.stack > .cta-link { align-self: flex-start; }
